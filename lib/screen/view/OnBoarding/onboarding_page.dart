@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:test/core/widget/custom_button.dart';
+import 'package:test/screen/widget/onboaeding_widget/last_onboarding_btn.dart';
 import 'package:test/screen/widget/onboaeding_widget/onboarding_appbar.dart';
 import 'package:test/screen/widget/onboaeding_widget/onboarding_indecator.dart';
 
@@ -13,8 +13,8 @@ class OnBoardingPage extends StatefulWidget {
 }
 
 class _OnBoardingPageState extends State<OnBoardingPage> {
-  final PageController controller = PageController();
-
+  final PageController controller = PageController(initialPage: 0);
+  int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,10 +26,15 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             children: [
               const SizedBox(height: 30),
               const OnBoardingAppBar(),
-              OnBoardingIndicator(controller: controller),
-              const SizedBox(height: 40),
-              const CustomButton(),
-              const SizedBox(height: 17),
+              OnBoardingIndicator(
+                controller: controller,
+                onPageChanged: (index) {
+                  currentIndex = index;
+                  setState(() {});
+                },
+              ),
+              LastOnBoardingButton(
+                  controller: controller, currentIndex: currentIndex)
             ],
           ),
         ),

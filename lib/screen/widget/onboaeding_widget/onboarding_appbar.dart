@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/constant/app_text_style.dart';
+import 'package:test/core/router/app_router.dart';
 
 class OnBoardingAppBar extends StatelessWidget {
   const OnBoardingAppBar({
@@ -13,7 +15,7 @@ class OnBoardingAppBar extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         GestureDetector(
-          onTap: () {},
+          onTap: () => context.router.replace(const SignUpRoute()),
           child: Text(AppStrings.skip,
               style: CustomTextStyles.poppins300style16
                   .copyWith(fontWeight: FontWeight.w400)),

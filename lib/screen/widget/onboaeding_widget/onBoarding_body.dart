@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_text_style.dart';
 import 'package:test/data/model/onboarding_model/onboarding_model.dart';
+import 'package:test/screen/widget/onboaeding_widget/custom_somth_indicator.dart';
 
 class OnBoardingBody extends StatelessWidget {
   final PageController controller;
@@ -27,15 +26,7 @@ class OnBoardingBody extends StatelessWidget {
                   image: AssetImage(data.image), fit: BoxFit.fill)),
         ),
         const SizedBox(height: 34),
-        SmoothPageIndicator(
-          controller: controller, // PageController
-          count: onboardingList.length,
-
-          effect: ExpandingDotsEffect(
-              activeDotColor: AppColors.deebBrown,
-              dotHeight: 6,
-              dotWidth: 8), // your preferred effect
-        ),
+        CustomSmoothPageIndicator(controller: controller),
         const SizedBox(height: 32),
         Text(data.title,
             textAlign: TextAlign.center,
