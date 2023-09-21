@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:test/core/extension/media_query.dart';
 import 'package:test/screen/widget/onboaeding_widget/last_onboarding_btn.dart';
 import 'package:test/screen/widget/onboaeding_widget/onboarding_appbar.dart';
 import 'package:test/screen/widget/onboaeding_widget/onboarding_indecator.dart';
@@ -24,7 +25,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           child: ListView(
             physics: const BouncingScrollPhysics(),
             children: [
-              const SizedBox(height: 30),
+              SizedBox(height: context.height * 0.04),
               const OnBoardingAppBar(),
               OnBoardingIndicator(
                 controller: controller,

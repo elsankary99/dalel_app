@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test/core/extension/media_query.dart';
 import 'package:test/data/model/onboarding_model/onboarding_model.dart';
 import 'package:test/screen/widget/onboaeding_widget/onBoarding_body.dart';
 
@@ -14,7 +15,7 @@ class OnBoardingIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 550,
+      height: context.height * 0.65,
       child: PageView.builder(
         onPageChanged: onPageChanged,
         physics: const BouncingScrollPhysics(),

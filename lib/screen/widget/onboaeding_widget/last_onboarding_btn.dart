@@ -1,8 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/constant/app_text_style.dart';
+import 'package:test/core/extension/media_query.dart';
 import 'package:test/core/router/app_router.dart';
 import 'package:test/core/widget/custom_button.dart';
 import 'package:test/data/model/onboarding_model/onboarding_model.dart';
@@ -17,7 +19,7 @@ class LastOnBoardingButton extends StatelessWidget {
     return currentIndex != onboardingList.length - 1
         ? Column(
             children: [
-              const SizedBox(height: 40),
+              SizedBox(height: context.height * 0.13),
               CustomButton(
                   text: AppStrings.next,
                   onPressed: () {
@@ -28,21 +30,22 @@ class LastOnBoardingButton extends StatelessWidget {
             ],
           )
         : Column(children: [
-            const SizedBox(height: 16),
+            SizedBox(height: context.height * 0.091),
             CustomButton(
                 text: AppStrings.createAccount,
                 onPressed: () => context.router.replace(const SignUpRoute())),
-            const SizedBox(height: 12),
+            SizedBox(height: context.height * 0.02),
             GestureDetector(
               onTap: () => context.router.replace(const LoginRoute()),
               child: Text(AppStrings.loginNow,
                   style: CustomTextStyles.poppins300style16.copyWith(
                     fontWeight: FontWeight.w400,
+                    fontSize: 16.sp,
                     color: AppColors.deebBrown,
                     decoration: TextDecoration.underline,
                   )),
             ),
-            const SizedBox(height: 7),
+            SizedBox(height: context.height * 0.02),
           ]);
   }
 }

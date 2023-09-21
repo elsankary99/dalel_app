@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test/core/constant/app_text_style.dart';
+import 'package:test/core/extension/media_query.dart';
 import 'package:test/data/model/onboarding_model/onboarding_model.dart';
 import 'package:test/screen/widget/onboaeding_widget/custom_somth_indicator.dart';
 
@@ -17,23 +18,23 @@ class OnBoardingBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 42),
+        SizedBox(height: context.height * 0.08),
         Container(
-          height: 270,
-          width: 278,
+          height: context.height * 0.3,
+          width: context.width * 0.75,
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(data.image), fit: BoxFit.fill)),
         ),
-        const SizedBox(height: 34),
+        SizedBox(height: context.width * 0.07),
         CustomSmoothPageIndicator(controller: controller),
-        const SizedBox(height: 32),
+        SizedBox(height: context.width * 0.07),
         Text(data.title,
             textAlign: TextAlign.center,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
             style: CustomTextStyles.poppins500style24),
-        const SizedBox(height: 16),
+        SizedBox(height: context.width * 0.04),
         Text(data.subTitle,
             textAlign: TextAlign.center,
             maxLines: 2,

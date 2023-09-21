@@ -30,8 +30,11 @@ environment:
 dependencies:
   auto_route: ^7.8.3
   cupertino_icons: ^1.0.2
+  device_preview: ^1.1.0
   flutter:
     sdk: flutter
+  flutter_screenutil: ^5.9.0
+  shared_preferences: ^2.2.1
   smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
