@@ -5,7 +5,7 @@ import 'package:test/app.dart';
 
 void main() {
   runApp(DevicePreview(
-    enabled: kReleaseMode,
+    enabled: !kReleaseMode,
     builder: (context) => const MyApp(),
   ));
 }

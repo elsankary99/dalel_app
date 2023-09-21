@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_text_style.dart';
 
@@ -14,7 +15,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
         width: double.infinity,
-        height: 56,
+        height: 56.w,
         child: ElevatedButton(
             onPressed: onPressed,
             style: ElevatedButton.styleFrom(

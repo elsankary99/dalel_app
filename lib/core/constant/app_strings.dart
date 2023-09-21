@@ -18,9 +18,9 @@ abstract class AppStrings {
       onboardingSubTitle3 =
           "AI provide recommendations and helps you to continue the search journey",
       //!Auth Strings
-      welcome = "Welcome!",
+      welcome = "Welcome !",
       welcomeBack = "Welcome Back!",
-      fristName = "First Name",
+      firstName = "First Name",
       lastName = "Last Name",
       emailAddress = "Email Address",
       password = "Password",
@@ -28,7 +28,7 @@ abstract class AppStrings {
       termsAndCondition = "Terms and Condition",
       signUp = "Sign Up",
       signIn = "Sign In",
-      alreadyHaveAnAccount = "Already have an account ?",
+      alreadyHaveAnAccount = "Already have an account ?  ",
       dontHaveAnAccount = "Don’t have an account ?",
       forgotPassword = "Forgot Password ?",
       //!Home Strings
