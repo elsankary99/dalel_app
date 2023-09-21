@@ -32,6 +32,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  smooth_page_indicator: ^1.1.0
 
 dev_dependencies:
   auto_route_generator: ^7.3.1
@@ -55,7 +56,7 @@ flutter:
 flutter_assets:
   assets_path: assets/images/
   output_path: lib/core/constant/
-  filename: app_images.dart  
+  filename: app_images.dart
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
