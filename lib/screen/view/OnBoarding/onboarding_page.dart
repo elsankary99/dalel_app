@@ -25,7 +25,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           child: ListView(
             physics: const BouncingScrollPhysics(),
             children: [
-              SizedBox(height: context.height * 0.04),
+              SizedBox(height: context.height * 0.035),
               const OnBoardingAppBar(),
               OnBoardingIndicator(
                 controller: controller,

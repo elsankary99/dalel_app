@@ -1,13 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_strings.dart';
-import 'package:test/core/constant/app_text_style.dart';
 import 'package:test/core/extension/media_query.dart';
 import 'package:test/core/widget/custom_button.dart';
 import 'package:test/core/widget/custom_password_txt_field.dart';
 import 'package:test/core/widget/custom_txt_form.dart';
+import 'package:test/screen/widget/signup_widget/have_account_or_not.dart';
+import 'package:test/screen/widget/signup_widget/terms_and_condition.dart';
+import 'package:test/screen/widget/signup_widget/welcome_text.dart';
 
 @RoutePage()
 class SignUpPage extends StatelessWidget {
@@ -19,73 +19,32 @@ class SignUpPage extends StatelessWidget {
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: ListView(
-          children: [
-            SizedBox(height: context.height * 0.1),
-            Text(
-              AppStrings.welcome,
-              textAlign: TextAlign.center,
-              style: CustomTextStyles.pacifico600style28,
+        child: CustomScrollView(
+          physics: const BouncingScrollPhysics(),
+          slivers: [
+            const SliverToBoxAdapter(child: WelcomeText()),
+            SliverToBoxAdapter(child: SizedBox(height: context.height * 0.04)),
+            const SliverToBoxAdapter(
+                child: CustomTextFormField(labelText: AppStrings.firstName)),
+            const SliverToBoxAdapter(
+                child: CustomTextFormField(labelText: AppStrings.lastName)),
+            const SliverToBoxAdapter(
+                child: CustomTextFormField(labelText: AppStrings.emailAddress)),
+            const SliverToBoxAdapter(
+                child:
+                    CustomPasswordTextFormField(hintText: AppStrings.password)),
+            SliverToBoxAdapter(child: SizedBox(height: context.height * 0.01)),
+            const SliverToBoxAdapter(child: TermsAndConditionWidget()),
+            SliverToBoxAdapter(child: SizedBox(height: context.height * 0.07)),
+            SliverToBoxAdapter(
+                child: CustomButton(text: AppStrings.signUp, onPressed: () {})),
+            SliverToBoxAdapter(child: SizedBox(height: context.height * 0.02)),
+            const SliverToBoxAdapter(
+              child: HaveAccountOrNot(
+                  text1: AppStrings.alreadyHaveAnAccount,
+                  text2: AppStrings.signIn),
             ),
-            SizedBox(height: context.height * 0.07),
-            const CustomTextFormField(hintText: AppStrings.firstName),
-            SizedBox(height: context.height * 0.04),
-            const CustomTextFormField(hintText: AppStrings.lastName),
-            SizedBox(height: context.height * 0.04),
-            const CustomTextFormField(hintText: AppStrings.emailAddress),
-            SizedBox(height: context.height * 0.04),
-            const CustomPasswordTextFormField(hintText: AppStrings.password),
-            SizedBox(height: context.height * 0.01),
-            Row(
-              children: [
-                Checkbox(value: false, onChanged: (value) {}),
-                Text(
-                  AppStrings.iHaveAgreeToOur,
-                  textAlign: TextAlign.center,
-                  style: CustomTextStyles.poppins500style24
-                      .copyWith(fontWeight: FontWeight.w400, fontSize: 12.sp),
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: Text(
-                    AppStrings.termsAndCondition,
-                    textAlign: TextAlign.center,
-                    style: CustomTextStyles.poppins500style24.copyWith(
-                        fontWeight: FontWeight.w400,
-                        decoration: TextDecoration.underline,
-                        fontSize: 12.sp),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: context.height * 0.07),
-            const CustomButton(text: AppStrings.signUp),
-            SizedBox(height: context.height * 0.025),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  AppStrings.alreadyHaveAnAccount,
-                  textAlign: TextAlign.center,
-                  style: CustomTextStyles.poppins500style24.copyWith(
-                      fontWeight: FontWeight.w400,
-                      color: AppColors.brown,
-                      fontSize: 13.sp),
-                ),
-                InkWell(
-                  onTap: () {},
-                  child: Text(
-                    AppStrings.signIn,
-                    textAlign: TextAlign.center,
-                    style: CustomTextStyles.poppins500style24.copyWith(
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.lightGrey,
-                        fontSize: 12.sp),
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: context.height * 0.01),
+            SliverToBoxAdapter(child: SizedBox(height: context.height * 0.01)),
           ],
         ),
       )),

@@ -19,7 +19,7 @@ class LastOnBoardingButton extends StatelessWidget {
     return currentIndex != onboardingList.length - 1
         ? Column(
             children: [
-              SizedBox(height: context.height * 0.13),
+              SizedBox(height: context.height * 0.1),
               CustomButton(
                   text: AppStrings.next,
                   onPressed: () {
@@ -30,11 +30,11 @@ class LastOnBoardingButton extends StatelessWidget {
             ],
           )
         : Column(children: [
-            SizedBox(height: context.height * 0.091),
+            SizedBox(height: context.height * 0.06),
             CustomButton(
                 text: AppStrings.createAccount,
                 onPressed: () => context.router.replace(const SignUpRoute())),
-            SizedBox(height: context.height * 0.02),
+            SizedBox(height: context.height * 0.01),
             GestureDetector(
               onTap: () => context.router.replace(const LoginRoute()),
               child: Text(AppStrings.loginNow,
@@ -45,7 +45,7 @@ class LastOnBoardingButton extends StatelessWidget {
                     decoration: TextDecoration.underline,
                   )),
             ),
-            SizedBox(height: context.height * 0.02),
+            SizedBox(height: context.height * 0.005),
           ]);
   }
 }
