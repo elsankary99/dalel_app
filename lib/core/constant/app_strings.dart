@@ -23,6 +23,8 @@ abstract class AppStrings {
       firstName = "First Name",
       lastName = "Last Name",
       emailAddress = "Email Address",
+      enterYourRegisteredEmail =
+          "Enter your registered email below to receive password reset instruction",
       password = "Password",
       iHaveAgreeToOur = "I have agree to our ",
       termsAndCondition = "Terms and Condition",
@@ -31,6 +33,7 @@ abstract class AppStrings {
       alreadyHaveAnAccount = "Already have an account ?  ",
       dontHaveAnAccount = "Don’t have an account ?  ",
       forgotPassword = "Forgot Password ?",
+      forgotPass = "Forgot Password",
       //!Home Strings
       recommendations = "Recommendations",
       aboutAncientEgypt = "About Ancient Egypt",
