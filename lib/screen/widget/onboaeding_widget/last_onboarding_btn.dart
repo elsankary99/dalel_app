@@ -53,7 +53,7 @@ class LastOnBoardingButton extends ConsumerWidget {
                   style: CustomTextStyles.poppins300style16.copyWith(
                     fontWeight: FontWeight.w400,
                     fontSize: 16.sp,
-                    color: AppColors.deebBrown,
+                    color: AppColors.deepBrown,
                     decoration: TextDecoration.underline,
                   )),
             ),

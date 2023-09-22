@@ -18,7 +18,7 @@ class CustomSmoothPageIndicator extends StatelessWidget {
       count: onboardingList.length,
 
       effect: ExpandingDotsEffect(
-          activeDotColor: AppColors.deebBrown,
+          activeDotColor: AppColors.deepBrown,
           dotHeight: 6,
           dotWidth: 8), // your preferred effect
     );

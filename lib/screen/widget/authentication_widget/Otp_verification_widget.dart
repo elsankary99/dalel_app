@@ -11,19 +11,32 @@ class OtpVerificationWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final defaultPinTheme = PinTheme(
+      margin: const EdgeInsets.symmetric(horizontal: 10),
+      width: context.width * 0.17,
+      height: context.height * 0.08,
+      textStyle: TextStyle(
+          fontSize: 24, color: AppColors.black, fontWeight: FontWeight.w600),
+      decoration: BoxDecoration(
+        border: Border.all(color: AppColors.deepGrey),
+        borderRadius: BorderRadius.circular(8),
+      ),
+    );
+    final focusedPinTheme = defaultPinTheme.copyDecorationWith(
+      border: Border.all(color: AppColors.primaryColor),
+    );
+
+    final submittedPinTheme = defaultPinTheme.copyDecorationWith(
+      border: Border.all(color: AppColors.primaryColor),
+    );
+
     return Pinput(
       onCompleted: (pin) => log(pin),
-      defaultPinTheme: PinTheme(
-        margin: const EdgeInsets.symmetric(horizontal: 10),
-        width: context.width * 0.17,
-        height: context.height * 0.08,
-        textStyle: TextStyle(
-            fontSize: 24, color: AppColors.black, fontWeight: FontWeight.w600),
-        decoration: BoxDecoration(
-          border: Border.all(color: AppColors.primaryColor),
-          borderRadius: BorderRadius.circular(8),
-        ),
-      ),
+      defaultPinTheme: defaultPinTheme,
+      focusedPinTheme: focusedPinTheme,
+      submittedPinTheme: submittedPinTheme,
+      showCursor: true,
+      //  focusedPinTheme:  ,
     );
   }
 }
