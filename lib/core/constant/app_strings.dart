@@ -77,6 +77,6 @@ abstract class AppStrings {
       verificationNow = "Verification Now",
       resendCode = "Resend Code",
       verifyAccount = "Verify Account",
-      enter4DigitCodeWeHaveSentTo = "Enter 4 digit code we have sent to ",
+      enter4DigitCodeWeHaveSentTo = "Enter 4 digit code we have sent\n to ",
       haventReceivedVerificationCode = "Haven’t received verification code?";
 }

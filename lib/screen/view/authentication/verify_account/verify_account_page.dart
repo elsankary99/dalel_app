@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/extension/media_query.dart';
-import 'package:test/core/router/app_router.dart';
 import 'package:test/core/widget/custom_button.dart';
-import 'package:test/core/widget/custom_txt_form.dart';
-import 'package:test/screen/widget/authentication_widget/forget_password_body.dart';
+import 'package:test/screen/widget/authentication_widget/Otp_verification_widget.dart';
+import 'package:test/screen/widget/authentication_widget/resend_code_widget.dart';
+import 'package:test/screen/widget/authentication_widget/verify_top_text.dart';
 
 @RoutePage()
-class ForgetPasswordPage extends ConsumerWidget {
-  const ForgetPasswordPage({super.key});
+class VerifyAccountPage extends ConsumerWidget {
+  const VerifyAccountPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -19,17 +19,15 @@ class ForgetPasswordPage extends ConsumerWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: CustomScrollView(slivers: [
-            const SliverToBoxAdapter(child: ForgetPasswordBody()),
+            const SliverToBoxAdapter(child: VerifyTopTextCenter()),
             SliverToBoxAdapter(child: SizedBox(height: context.height * 0.05)),
-            const SliverToBoxAdapter(
-                child: CustomTextFormField(labelText: AppStrings.emailAddress)),
-            SliverToBoxAdapter(child: SizedBox(height: context.height * 0.12)),
+            const SliverToBoxAdapter(child: OtpVerificationWidget()),
+            SliverToBoxAdapter(child: SizedBox(height: context.height * 0.05)),
+            SliverToBoxAdapter(child: ResendCodeWidget(onTap: () {})),
+            SliverToBoxAdapter(child: SizedBox(height: context.height * 0.28)),
             SliverToBoxAdapter(
                 child: CustomButton(
-                    text: AppStrings.sendVerificationCode,
-                    onPressed: () {
-                      context.router.push(const VerifyAccountRoute());
-                    })),
+                    text: AppStrings.verificationNow, onPressed: () {})),
             SliverToBoxAdapter(child: SizedBox(height: context.height * 0.02)),
           ]),
         ),
