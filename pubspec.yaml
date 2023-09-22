@@ -33,6 +33,7 @@ dependencies:
   device_preview: ^1.1.0
   flutter:
     sdk: flutter
+  flutter_riverpod: ^2.4.0
   flutter_screenutil: ^5.9.0
   font_awesome_flutter: ^10.5.0
   shared_preferences: ^2.2.1
