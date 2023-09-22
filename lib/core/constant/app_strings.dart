@@ -24,7 +24,7 @@ abstract class AppStrings {
       lastName = "Last Name",
       emailAddress = "Email Address",
       enterYourRegisteredEmail =
-          "Enter your registered email below to receive password reset instruction",
+          "Enter your registered email below to receive \npassword reset instruction",
       password = "Password",
       iHaveAgreeToOur = "I have agree to our ",
       termsAndCondition = "Terms and Condition",
