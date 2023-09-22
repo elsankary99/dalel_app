@@ -5,10 +5,6 @@ class Assets {
   /// assets/images/forgotPassword.png
   static const String assetsImagesForgotPassword = "assets/images/forgotPassword.png";
 
-  /// Assets for assetsImagesOnBoarding
-  /// assets/images/onBoarding.png
-  static const String assetsImagesOnBoarding = "assets/images/onBoarding.png";
-
   /// Assets for assetsImagesOnBoarding1
   /// assets/images/onBoarding1.png
   static const String assetsImagesOnBoarding1 = "assets/images/onBoarding1.png";
@@ -16,6 +12,10 @@ class Assets {
   /// Assets for assetsImagesOnBoarding2
   /// assets/images/onBoarding2.png
   static const String assetsImagesOnBoarding2 = "assets/images/onBoarding2.png";
+
+  /// Assets for assetsImagesOnBoarding3
+  /// assets/images/onBoarding3.png
+  static const String assetsImagesOnBoarding3 = "assets/images/onBoarding3.png";
 
   /// Assets for assetsImagesSucccesOrder
   /// assets/images/succcesOrder.png

@@ -10,7 +10,7 @@ abstract class AppStrings {
       onboardingTitle1 = "Explore The history with Dalel in a smart way",
       onboardingSubTitle1 =
           "Using our app’s history libraries you can find many historical periods ",
-      onboardingTitle2 = "From every place on earth",
+      onboardingTitle2 = "From every place \n on earth",
       onboardingSubTitle2 =
           "A big variety of ancient places from all over the world",
       onboardingTitle3 =

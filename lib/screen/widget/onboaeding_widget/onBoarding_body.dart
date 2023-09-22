@@ -19,13 +19,10 @@ class OnBoardingBody extends StatelessWidget {
     return Column(
       children: [
         SizedBox(height: context.height * 0.08),
-        Container(
-          height: context.height * 0.3,
-          width: context.width * 0.75,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(data.image), fit: BoxFit.fill)),
-        ),
+        SizedBox(
+            height: context.height * 0.3,
+            width: context.width * 0.75,
+            child: Image.asset(data.image, fit: BoxFit.fill)),
         SizedBox(height: context.width * 0.05),
         CustomSmoothPageIndicator(controller: controller),
         SizedBox(height: context.width * 0.05),

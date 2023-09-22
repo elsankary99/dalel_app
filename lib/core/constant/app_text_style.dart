@@ -28,7 +28,7 @@ abstract class CustomTextStyles {
     fontFamily: "Poppins",
   );
   static final poppins500style24 = TextStyle(
-    fontSize: 24.sp,
+    fontSize: 23.sp,
     fontWeight: FontWeight.w500,
     color: Colors.black,
     fontFamily: "Poppins",

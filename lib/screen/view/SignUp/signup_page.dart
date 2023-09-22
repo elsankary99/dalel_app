@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/extension/media_query.dart';
+import 'package:test/core/router/app_router.dart';
 import 'package:test/core/widget/custom_button.dart';
 import 'package:test/core/widget/custom_password_txt_field.dart';
 import 'package:test/core/widget/custom_txt_form.dart';
@@ -39,8 +40,9 @@ class SignUpPage extends StatelessWidget {
             SliverToBoxAdapter(
                 child: CustomButton(text: AppStrings.signUp, onPressed: () {})),
             SliverToBoxAdapter(child: SizedBox(height: context.height * 0.02)),
-            const SliverToBoxAdapter(
+            SliverToBoxAdapter(
               child: HaveAccountOrNot(
+                  onTap: () => context.router.replace(const LoginRoute()),
                   text1: AppStrings.alreadyHaveAnAccount,
                   text2: AppStrings.signIn),
             ),

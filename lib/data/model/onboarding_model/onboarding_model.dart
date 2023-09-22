@@ -12,17 +12,17 @@ class OnBoardingModel {
 
 List<OnBoardingModel> onboardingList = [
   OnBoardingModel(
-    image: Assets.assetsImagesOnBoarding,
+    image: Assets.assetsImagesOnBoarding1,
     title: AppStrings.onboardingTitle1,
     subTitle: AppStrings.onboardingSubTitle1,
   ),
   OnBoardingModel(
-    image: Assets.assetsImagesOnBoarding1,
+    image: Assets.assetsImagesOnBoarding2,
     title: AppStrings.onboardingTitle2,
     subTitle: AppStrings.onboardingSubTitle2,
   ),
   OnBoardingModel(
-    image: Assets.assetsImagesOnBoarding2,
+    image: Assets.assetsImagesOnBoarding3,
     title: AppStrings.onboardingTitle3,
     subTitle: AppStrings.onboardingSubTitle3,
   ),
