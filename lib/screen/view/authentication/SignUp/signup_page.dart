@@ -6,9 +6,9 @@ import 'package:test/core/router/app_router.dart';
 import 'package:test/core/widget/custom_button.dart';
 import 'package:test/core/widget/custom_password_txt_field.dart';
 import 'package:test/core/widget/custom_txt_form.dart';
-import 'package:test/screen/widget/signup_widget/have_account_or_not.dart';
-import 'package:test/screen/widget/signup_widget/terms_and_condition.dart';
-import 'package:test/screen/widget/signup_widget/welcome_text.dart';
+import 'package:test/screen/widget/authentication_widget/have_account_or_not.dart';
+import 'package:test/screen/widget/authentication_widget/terms_and_condition.dart';
+import 'package:test/screen/widget/authentication_widget/welcome_text.dart';
 
 @RoutePage()
 class SignUpPage extends StatelessWidget {
@@ -23,7 +23,9 @@ class SignUpPage extends StatelessWidget {
         child: CustomScrollView(
           physics: const BouncingScrollPhysics(),
           slivers: [
-            const SliverToBoxAdapter(child: WelcomeText()),
+            SliverToBoxAdapter(child: SizedBox(height: context.height * 0.13)),
+            const SliverToBoxAdapter(
+                child: WelcomeText(text: AppStrings.welcome)),
             SliverToBoxAdapter(child: SizedBox(height: context.height * 0.04)),
             const SliverToBoxAdapter(
                 child: CustomTextFormField(labelText: AppStrings.firstName)),

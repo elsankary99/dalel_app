@@ -19,7 +19,7 @@ abstract class AppStrings {
           "AI provide recommendations and helps you to continue the search journey",
       //!Auth Strings
       welcome = "Welcome !",
-      welcomeBack = "Welcome Back!",
+      welcomeBack = "Welcome Back !",
       firstName = "First Name",
       lastName = "Last Name",
       emailAddress = "Email Address",
@@ -29,7 +29,7 @@ abstract class AppStrings {
       signUp = "Sign Up",
       signIn = "Sign In",
       alreadyHaveAnAccount = "Already have an account ?  ",
-      dontHaveAnAccount = "Don’t have an account ?",
+      dontHaveAnAccount = "Don’t have an account ?  ",
       forgotPassword = "Forgot Password ?",
       //!Home Strings
       recommendations = "Recommendations",

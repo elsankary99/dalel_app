@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/constant/app_text_style.dart';
-import 'package:test/screen/widget/signup_widget/custom_check_box.dart';
+import 'package:test/screen/widget/authentication_widget/custom_check_box.dart';
 
 class TermsAndConditionWidget extends StatelessWidget {
   const TermsAndConditionWidget({
