@@ -41,7 +41,7 @@ class CustomVerticalCard extends StatelessWidget {
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 style: CustomTextStyles.poppins500style16
-                    .copyWith(fontSize: 14.sp),
+                    .copyWith(fontSize: 13.sp),
               ),
             ),
           ],

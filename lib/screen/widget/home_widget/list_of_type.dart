@@ -24,7 +24,7 @@ class ListOfType extends StatelessWidget {
               elevation: 2,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(5)),
-              margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 5),
+              margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 2),
               child: Center(
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 8),
