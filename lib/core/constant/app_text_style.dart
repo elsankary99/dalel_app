@@ -31,7 +31,13 @@ abstract class CustomTextStyles {
     fontSize: 12.sp,
     fontWeight: FontWeight.w400,
     color: AppColors.deepGrey,
-    fontFamily: "Poppins",
+    fontFamily: "Pacifico",
+  );
+  static final pacifico400style22 = TextStyle(
+    fontSize: 22.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.deepBrown,
+    fontFamily: "Pacifico",
   );
   static final pacifico500style18 = TextStyle(
     fontSize: 18.sp,

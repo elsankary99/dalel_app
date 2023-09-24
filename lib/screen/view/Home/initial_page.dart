@@ -5,11 +5,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:test/core/constant/app_colors.dart';
+import 'package:test/core/constant/app_strings.dart';
+import 'package:test/core/constant/app_text_style.dart';
 import 'package:test/core/extension/media_query.dart';
 import 'package:test/screen/view/Home/pages/cart_page.dart';
 import 'package:test/screen/view/Home/pages/home_page.dart';
 import 'package:test/screen/view/Home/pages/search_page.dart';
 import 'package:test/screen/view/Home/pages/user_page.dart';
+import 'package:test/screen/widget/home_widget/home_appbar_text.dart';
 
 @RoutePage()
 class InitialPage extends ConsumerStatefulWidget {
@@ -49,10 +52,18 @@ class _HomePageState extends ConsumerState<InitialPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: TabBarView(
-        controller: tapController,
-        physics: const NeverScrollableScrollPhysics(),
-        children: pagesList,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        actions: const [HomeAppBarText()],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: TabBarView(
+          controller: tapController,
+          physics: const NeverScrollableScrollPhysics(),
+          children: pagesList,
+        ),
       ),
       bottomNavigationBar: AnimatedBottomNavigationBar(
         icons: iconList,
