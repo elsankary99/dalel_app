@@ -10,7 +10,7 @@ void main() async {
   final container = ProviderContainer();
   await container.read(sharedPrefProvider).init();
   runApp(DevicePreview(
-    enabled: !kReleaseMode,
+    enabled: kReleaseMode,
     builder: (context) =>
         UncontrolledProviderScope(container: container, child: const MyApp()),
   ));

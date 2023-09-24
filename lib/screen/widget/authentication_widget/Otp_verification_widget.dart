@@ -7,8 +7,8 @@ import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/extension/media_query.dart';
 
 class OtpVerificationWidget extends ConsumerWidget {
-  const OtpVerificationWidget({super.key});
-
+  const OtpVerificationWidget({this.controller, super.key});
+  final TextEditingController? controller;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final defaultPinTheme = PinTheme(
@@ -31,6 +31,7 @@ class OtpVerificationWidget extends ConsumerWidget {
     );
 
     return Pinput(
+      controller: controller,
       onCompleted: (pin) => log(pin),
       defaultPinTheme: defaultPinTheme,
       focusedPinTheme: focusedPinTheme,
