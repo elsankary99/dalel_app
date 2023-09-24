@@ -36,6 +36,12 @@ abstract class AppStrings {
       forgotPass = "Forgot Password",
       //!Home Strings
       recommendations = "Recommendations",
+      historicalPeriods = "Historical periods",
+      historicalCharacters = "Historical Characters",
+      historicalSouvenirs = "Historical Souvenirs",
+      napoleon = "Napoleon",
+      oldBooks = "Old Books",
+      ancientEgypt = "Ancient Egypt",
       aboutAncientEgypt = "About Ancient Egypt",
       ancientEgyptWars = "Ancient Egypt Wars",
       //!Search Strings
@@ -54,7 +60,6 @@ abstract class AppStrings {
       //!Bazar
       bazar = "Bazar",
       historyBooks = "History Books",
-      historicalSouvenirs = "Historical Souvenirs",
       //!Cart
       myCart = "My Cart",
       totalPayment = "Total Payment",

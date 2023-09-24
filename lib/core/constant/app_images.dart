@@ -5,6 +5,26 @@ class Assets {
   /// assets/images/forgotPassword.png
   static const String assetsImagesForgotPassword = "assets/images/forgotPassword.png";
 
+  /// Assets for assetsImagesFrame
+  /// assets/images/frame.jpg
+  static const String assetsImagesFrame = "assets/images/frame.jpg";
+
+  /// Assets for assetsImagesLogo
+  /// assets/images/logo.jpg
+  static const String assetsImagesLogo = "assets/images/logo.jpg";
+
+  /// Assets for assetsImagesLogoForeground
+  /// assets/images/logo_foreground.png
+  static const String assetsImagesLogoForeground = "assets/images/logo_foreground.png";
+
+  /// Assets for assetsImagesNapilion
+  /// assets/images/napilion.jpg
+  static const String assetsImagesNapilion = "assets/images/napilion.jpg";
+
+  /// Assets for assetsImagesOldbox
+  /// assets/images/oldbox.jpg
+  static const String assetsImagesOldbox = "assets/images/oldbox.jpg";
+
   /// Assets for assetsImagesOnBoarding1
   /// assets/images/onBoarding1.png
   static const String assetsImagesOnBoarding1 = "assets/images/onBoarding1.png";
