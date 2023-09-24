@@ -46,7 +46,7 @@ class LoginPage extends StatelessWidget {
               CustomButton(
                   text: AppStrings.signIn,
                   onPressed: () {
-                    context.router.replace(const HomeRoute());
+                    context.router.replace(const InitialRoute());
                   }),
               SizedBox(height: context.height * 0.02),
               HaveAccountOrNot(

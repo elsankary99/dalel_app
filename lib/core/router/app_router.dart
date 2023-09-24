@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:test/screen/view/Home/home_page.dart';
+import 'package:test/screen/view/Home/initial_page.dart';
 import 'package:test/screen/view/authentication/Login/login_page.dart';
 import 'package:test/screen/view/OnBoarding/onboarding_page.dart';
 import 'package:test/screen/view/authentication/SignUp/signup_page.dart';
@@ -25,6 +25,6 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: ForgetPasswordRoute.page),
         AutoRoute(page: VerifyAccountRoute.page),
         //? Home
-        AutoRoute(page: HomeRoute.page),
+        AutoRoute(page: InitialRoute.page),
       ];
 }

@@ -21,10 +21,10 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const ForgetPasswordPage(),
       );
     },
-    HomeRoute.name: (routeData) {
+    InitialRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const HomePage(),
+        child: const InitialPage(),
       );
     },
     LoginRoute.name: (routeData) {
@@ -75,15 +75,15 @@ class ForgetPasswordRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [HomePage]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute({List<PageRouteInfo>? children})
+/// [InitialPage]
+class InitialRoute extends PageRouteInfo<void> {
+  const InitialRoute({List<PageRouteInfo>? children})
       : super(
-          HomeRoute.name,
+          InitialRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'HomeRoute';
+  static const String name = 'InitialRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
