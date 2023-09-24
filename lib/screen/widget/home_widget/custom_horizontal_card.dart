@@ -19,8 +19,7 @@ class CustomHorizontalCard extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SizedBox(
-                width: context.width * 0.2,
+              Expanded(
                 child: Text(
                   AppStrings.ancientEgyptWars,
                   textAlign: TextAlign.center,
@@ -28,7 +27,7 @@ class CustomHorizontalCard extends StatelessWidget {
                   style: CustomTextStyles.poppins500style16,
                 ),
               ),
-              const Spacer(),
+              const SizedBox(width: 5),
               Image.asset(Assets.assetsImagesFrame)
             ],
           ),

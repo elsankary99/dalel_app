@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:test/core/constant/app_colors.dart';
+import 'package:test/core/constant/app_images.dart';
 import 'package:test/core/extension/media_query.dart';
 import 'package:test/screen/view/Home/pages/cart_page.dart';
 import 'package:test/screen/view/Home/pages/home_page.dart';
@@ -52,6 +53,7 @@ class _HomePageState extends ConsumerState<InitialPage>
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
+        title: Image.asset(Assets.assetsImagesPyramid),
         backgroundColor: Colors.transparent,
         actions: const [HomeAppBarText()],
       ),

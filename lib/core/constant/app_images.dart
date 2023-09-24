@@ -37,6 +37,14 @@ class Assets {
   /// assets/images/onBoarding3.png
   static const String assetsImagesOnBoarding3 = "assets/images/onBoarding3.png";
 
+  /// Assets for assetsImagesPyramid
+  /// assets/images/pyramid.png
+  static const String assetsImagesPyramid = "assets/images/pyramid.png";
+
+  /// Assets for assetsImagesSearch
+  /// assets/images/search.jpg
+  static const String assetsImagesSearch = "assets/images/search.jpg";
+
   /// Assets for assetsImagesSucccesOrder
   /// assets/images/succcesOrder.png
   static const String assetsImagesSucccesOrder = "assets/images/succcesOrder.png";
