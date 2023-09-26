@@ -16,6 +16,7 @@ class SignUpProvider extends StateNotifier<SignUpState> {
   Future<void> signUpWithEmailAndPassword() async {
     try {
       state = SignUpLoading();
+      // ignore: unused_local_variable
       final credential =
           await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailAddress!,
