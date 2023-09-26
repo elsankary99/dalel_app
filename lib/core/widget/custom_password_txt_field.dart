@@ -7,9 +7,13 @@ import 'package:test/screen/widget/authentication_widget/function.dart';
 
 class CustomPasswordTextFormField extends StatefulWidget {
   final String hintText;
+  final void Function(String)? onChanged;
+  final void Function(String)? onFieldSubmitted;
   const CustomPasswordTextFormField({
     super.key,
     required this.hintText,
+    this.onChanged,
+    this.onFieldSubmitted,
   });
 
   @override
@@ -25,6 +29,8 @@ class _CustomPasswordTextFormFieldState
     return Padding(
       padding: EdgeInsets.only(top: 20.h),
       child: TextFormField(
+        onChanged: widget.onChanged,
+        onFieldSubmitted: widget.onFieldSubmitted,
         obscureText: isHide,
         cursorColor: AppColors.primaryColor,
         decoration: InputDecoration(

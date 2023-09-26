@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -5,6 +6,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/extension/media_query.dart';
+import 'package:test/core/router/app_router.dart';
 import 'package:test/screen/widget/home_widget/head_text.dart';
 import 'package:test/screen/widget/home_widget/historical_characters_widget.dart';
 import 'package:test/screen/widget/home_widget/historical_periods_widget.dart';
@@ -39,7 +41,7 @@ class CartPage extends ConsumerWidget {
           child: FloatingActionButton(
             backgroundColor: AppColors.primaryColor,
             onPressed: () {
-              // FAB onPressed callback
+              context.router.push(const MyCartRoute());
             },
             child: Icon(
               FontAwesomeIcons.cartShopping,
