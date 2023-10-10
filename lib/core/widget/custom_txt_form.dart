@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test/core/constant/app_colors.dart';
+import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/constant/app_text_style.dart';
 import 'package:test/screen/widget/authentication_widget/function.dart';
 
@@ -20,6 +21,12 @@ class CustomTextFormField extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top: 20.h),
       child: TextFormField(
+        validator: (value) {
+          if (value!.trim().isEmpty) {
+            return AppStrings.requiredField;
+          }
+          return null;
+        },
         onChanged: onChanged,
         onFieldSubmitted: onFieldSubmitted,
         cursorColor: AppColors.primaryColor,

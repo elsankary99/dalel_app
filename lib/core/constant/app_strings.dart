@@ -83,5 +83,7 @@ abstract class AppStrings {
       resendCode = "Resend Code",
       verifyAccount = "Verify Account",
       enter4DigitCodeWeHaveSentTo = "Enter 4 digit code we have sent\n to ",
-      haventReceivedVerificationCode = "Haven’t received verification code?";
+      haventReceivedVerificationCode = "Haven’t received verification code?",
+      requiredField = "This Field is required",
+      passwordError = "password must be at least 6 characters";
 }

@@ -8,19 +8,15 @@ import 'package:test/core/widget/custom_txt_form.dart';
 import 'package:test/provider/authentication/signup_provider/sign_up_provider.dart';
 import 'package:test/screen/widget/authentication_widget/terms_and_condition.dart';
 
-class CustomSignUPForm extends ConsumerStatefulWidget {
+class CustomSignUPForm extends ConsumerWidget {
   const CustomSignUPForm({super.key});
 
   @override
-  ConsumerState<ConsumerStatefulWidget> createState() =>
-      _CustomSignUPFormState();
-}
-
-class _CustomSignUPFormState extends ConsumerState<CustomSignUPForm> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final provider = ref.read(authProvider.notifier);
+    ref.watch(authProvider);
     return Form(
+      key: provider.signUpKey,
       child: Column(
         children: [
           CustomTextFormField(
@@ -48,9 +44,11 @@ class _CustomSignUPFormState extends ConsumerState<CustomSignUPForm> {
           SizedBox(height: context.height * 0.07),
           CustomButton(
               text: AppStrings.signUp,
-              onPressed: () async {
-                await provider.signUpWithEmailAndPassword();
-              })
+              onPressed: provider.activeTerms
+                  ? () async {
+                      await provider.signUpWithEmailAndPassword();
+                    }
+                  : null)
         ],
       ),
     );
