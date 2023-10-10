@@ -3,22 +3,20 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 part 'sign_up_state.dart';
 
-final signUpProvider = StateNotifierProvider<SignUpProvider, SignUpState>(
-    (ref) => SignUpProvider());
+final authProvider =
+    StateNotifierProvider<AuthProvider, AuthState>((ref) => AuthProvider());
 
-class SignUpProvider extends StateNotifier<SignUpState> {
-  SignUpProvider() : super(SignUpInitial());
-  late String? firstName;
-  late String? lastName;
-  late String? emailAddress;
-  late String? password;
-
+class AuthProvider extends StateNotifier<AuthState> {
+  AuthProvider() : super(AuthInitial());
+  String? firstName;
+  String? lastName;
+  String? emailAddress;
+  String? password;
+  bool activeTerms = false;
   Future<void> signUpWithEmailAndPassword() async {
     try {
       state = SignUpLoading();
-      // ignore: unused_local_variable
-      final credential =
-          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: emailAddress!,
         password: password!,
       );
@@ -33,5 +31,10 @@ class SignUpProvider extends StateNotifier<SignUpState> {
     } catch (e) {
       state = SignUpFailure(e.toString());
     }
+  }
+
+  void termsAndCondition(bool active) {
+    activeTerms = active;
+    state = TermsAndCondition();
   }
 }

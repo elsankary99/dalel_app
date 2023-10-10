@@ -1,16 +1,30 @@
 part of 'sign_up_provider.dart';
 
-abstract class SignUpState {
-  const SignUpState();
+abstract class AuthState {
+  const AuthState();
 }
 
-class SignUpInitial extends SignUpState {}
+class AuthInitial extends AuthState {}
 
-class SignUpLoading extends SignUpState {}
+//? Sign Up
+class SignUpLoading extends AuthState {}
 
-class SignUpSuccess extends SignUpState {}
+class SignUpSuccess extends AuthState {}
 
-class SignUpFailure extends SignUpState {
+class SignUpFailure extends AuthState {
   final String message;
   const SignUpFailure(this.message);
 }
+
+//? Login
+class LoginLoading extends AuthState {}
+
+class LoginSuccess extends AuthState {}
+
+class LoginFailure extends AuthState {
+  final String message;
+  const LoginFailure(this.message);
+}
+
+//? termsAndCondition
+class TermsAndCondition extends AuthState {}

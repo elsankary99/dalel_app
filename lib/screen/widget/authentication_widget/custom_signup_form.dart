@@ -19,27 +19,28 @@ class CustomSignUPForm extends ConsumerStatefulWidget {
 class _CustomSignUPFormState extends ConsumerState<CustomSignUPForm> {
   @override
   Widget build(BuildContext context) {
+    final provider = ref.read(authProvider.notifier);
     return Form(
       child: Column(
         children: [
           CustomTextFormField(
               onChanged: (firstName) {
-                ref.read(signUpProvider.notifier).firstName = firstName;
+                provider.firstName = firstName;
               },
               labelText: AppStrings.firstName),
           CustomTextFormField(
               onChanged: (lastName) {
-                ref.read(signUpProvider.notifier).lastName = lastName;
+                provider.lastName = lastName;
               },
               labelText: AppStrings.lastName),
           CustomTextFormField(
               onChanged: (emailAddress) {
-                ref.read(signUpProvider.notifier).emailAddress = emailAddress;
+                provider.emailAddress = emailAddress;
               },
               labelText: AppStrings.emailAddress),
           CustomPasswordTextFormField(
               onChanged: (password) {
-                ref.read(signUpProvider.notifier).password = password;
+                provider.password = password;
               },
               hintText: AppStrings.password),
           SizedBox(height: context.height * 0.01),
@@ -48,9 +49,7 @@ class _CustomSignUPFormState extends ConsumerState<CustomSignUPForm> {
           CustomButton(
               text: AppStrings.signUp,
               onPressed: () async {
-                await ref
-                    .read(signUpProvider.notifier)
-                    .signUpWithEmailAndPassword();
+                await provider.signUpWithEmailAndPassword();
               })
         ],
       ),
