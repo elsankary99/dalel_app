@@ -26,5 +26,15 @@ class LoginFailure extends AuthState {
   const LoginFailure(this.message);
 }
 
+//? logout
+class LogOutLoading extends AuthState {}
+
+class LogOutSuccess extends AuthState {}
+
+class LogOutFailure extends AuthState {
+  final String message;
+  const LogOutFailure(this.message);
+}
+
 //? termsAndCondition
 class TermsAndCondition extends AuthState {}

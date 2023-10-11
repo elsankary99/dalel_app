@@ -94,5 +94,6 @@ abstract class AppStrings {
       passwordError = "password must be at least 6 characters",
       welcomeToOurApp = 'Welcome to our app 🤍',
       kContinue = "continue",
+      sureLogOut = 'Are you sure you want to log out?',
       welcomeLBack = 'Welcome Back 🤍';
 }

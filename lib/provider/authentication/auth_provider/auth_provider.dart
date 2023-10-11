@@ -28,7 +28,7 @@ class AuthProvider extends StateNotifier<AuthState> {
           password: password!,
         );
         log("SignUpSuccess");
-
+        await sendVerifyEmail();
         state = SignUpSuccess();
       } on FirebaseAuthException catch (e) {
         if (e.code == 'weak-password') {
@@ -60,6 +60,10 @@ class AuthProvider extends StateNotifier<AuthState> {
           email: emailAddress!,
           password: password!,
         );
+        if (!FirebaseAuth.instance.currentUser!.emailVerified) {
+          log("email verified == ${FirebaseAuth.instance.currentUser!.emailVerified}");
+          await sendVerifyEmail();
+        }
         state = LoginSuccess();
       } on FirebaseAuthException catch (e) {
         if (e.code == 'user-not-found') {
@@ -79,6 +83,28 @@ class AuthProvider extends StateNotifier<AuthState> {
         log(e.toString());
       }
     }
+  }
+
+  Future<void> logOut() async {
+    state = LogOutLoading();
+    try {
+      await FirebaseAuth.instance.signOut();
+      state = LogOutSuccess();
+      log('LogOutSuccess.');
+    } on FirebaseAuthException catch (e) {
+      log(e.toString());
+
+      state = LogOutFailure(e.toString());
+    } catch (e) {
+      log(e.toString());
+
+      state = LogOutFailure(e.toString());
+    }
+  }
+
+  Future<void> sendVerifyEmail() async {
+    log("sendEmailVerification");
+    await FirebaseAuth.instance.currentUser!.sendEmailVerification();
   }
 
   void termsAndCondition(bool active) {

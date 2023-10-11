@@ -5,7 +5,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_strings.dart';
+import 'package:test/core/constant/app_text_style.dart';
 import 'package:test/core/extension/media_query.dart';
 import 'package:test/core/router/app_router.dart';
 import 'package:test/core/widget/custom_toast.dart';
@@ -26,19 +28,25 @@ class VerifyEmailPage extends ConsumerWidget {
               size: 80.sp,
             ),
             SizedBox(height: context.height * 0.07),
-            const Text(
+            Text(
               AppStrings.verifyYourEmailAddress,
               textAlign: TextAlign.center,
+              style: CustomTextStyles.poppins500style18
+                  .copyWith(color: Colors.black),
             ),
             SizedBox(height: context.height * 0.02),
-            const Text(
+            Text(
               AppStrings.verifyYourEmailAddress2,
               textAlign: TextAlign.center,
+              style: CustomTextStyles.poppins400style14
+                  .copyWith(color: AppColors.blackGrey),
             ),
             SizedBox(height: context.height * 0.02),
-            const Text(
+            Text(
               AppStrings.verifyYourEmailAddress3,
               textAlign: TextAlign.center,
+              style: CustomTextStyles.poppins400style14
+                  .copyWith(color: AppColors.blackGrey),
             ),
             SizedBox(height: context.height * 0.05),
             SizedBox(
@@ -64,7 +72,8 @@ class VerifyEmailPage extends ConsumerWidget {
                         side: const BorderSide(color: Colors.grey))),
                 child: Text(
                   AppStrings.kContinue,
-                  style: Theme.of(context).textTheme.titleSmall,
+                  style: CustomTextStyles.poppins400style14
+                      .copyWith(color: AppColors.blackGrey),
                 ),
               ),
             ),

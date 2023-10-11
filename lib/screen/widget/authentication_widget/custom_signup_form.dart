@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/extension/media_query.dart';
+import 'package:test/core/router/app_router.dart';
 import 'package:test/core/widget/custom_button.dart';
 import 'package:test/core/widget/custom_circle_indicator.dart';
 import 'package:test/core/widget/custom_password_txt_field.dart';
@@ -24,6 +26,7 @@ class CustomSignUPForm extends ConsumerWidget {
           customToast(title: next.message, color: Colors.red);
         }
         if (next is SignUpSuccess) {
+          context.router.replace(const VerifyEmailRoute());
           customToast(title: AppStrings.accountCreatedSuccessfully);
         }
       },

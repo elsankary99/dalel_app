@@ -6,6 +6,7 @@ import 'package:test/screen/view/OnBoarding/onboarding_page.dart';
 import 'package:test/screen/view/authentication/SignUp/signup_page.dart';
 import 'package:test/screen/view/authentication/forget_Password/forget_password_page.dart';
 import 'package:test/screen/view/authentication/verify_account/verify_account_page.dart';
+import 'package:test/screen/view/authentication/verify_email/verifiy_email_page.dart';
 import 'package:test/screen/view/splash/splash_page.dart';
 
 part 'app_router.gr.dart';
@@ -25,6 +26,7 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: SignUpRoute.page),
         AutoRoute(page: ForgetPasswordRoute.page),
         AutoRoute(page: VerifyAccountRoute.page),
+        AutoRoute(page: VerifyEmailRoute.page),
         //? Home
         AutoRoute(page: InitialRoute.page),
         AutoRoute(page: MyCartRoute.page),

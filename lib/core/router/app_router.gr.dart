@@ -63,6 +63,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const VerifyAccountPage(),
       );
     },
+    VerifyEmailRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const VerifyEmailPage(),
+      );
+    },
   };
 }
 
@@ -174,6 +180,20 @@ class VerifyAccountRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'VerifyAccountRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [VerifyEmailPage]
+class VerifyEmailRoute extends PageRouteInfo<void> {
+  const VerifyEmailRoute({List<PageRouteInfo>? children})
+      : super(
+          VerifyEmailRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'VerifyEmailRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
