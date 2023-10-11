@@ -1,7 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:test/core/constant/app_colors.dart';
-import 'package:test/provider/authentication/signup_provider/sign_up_provider.dart';
+import 'package:test/provider/authentication/auth_provider/auth_provider.dart';
 
 class CustomCheckBox extends ConsumerWidget {
   const CustomCheckBox({super.key});

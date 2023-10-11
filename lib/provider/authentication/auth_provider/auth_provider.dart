@@ -1,8 +1,10 @@
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-part 'sign_up_state.dart';
+part 'auth_state.dart';
 
 final authProvider =
     StateNotifierProvider<AuthProvider, AuthState>((ref) => AuthProvider());
@@ -15,6 +17,7 @@ class AuthProvider extends StateNotifier<AuthState> {
   String? password;
   bool activeTerms = false;
   GlobalKey<FormState> signUpKey = GlobalKey<FormState>();
+  GlobalKey<FormState> loginKey = GlobalKey<FormState>();
   Future<void> signUpWithEmailAndPassword() async {
     if (signUpKey.currentState!.validate()) {
       try {
@@ -33,6 +36,35 @@ class AuthProvider extends StateNotifier<AuthState> {
         }
       } catch (e) {
         state = SignUpFailure(e.toString());
+      }
+    }
+  }
+
+  Future<void> login() async {
+    if (loginKey.currentState!.validate()) {
+      state = LoginLoading();
+      try {
+        await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: emailAddress!,
+          password: password!,
+        );
+        state = LoginSuccess();
+      } on FirebaseAuthException catch (e) {
+        if (e.code == 'user-not-found') {
+          state = const LoginFailure('No user found for that email.');
+
+          log('No user found for that email.');
+        } else if (e.code == 'wrong-password') {
+          state = const LoginFailure('Wrong password provided for that user.');
+          log('Wrong password provided for that user.');
+        } else {
+          state = const LoginFailure(
+              'there are some thing went wrong with your email or password.');
+          log('there are some thing went wrong with your email or password.');
+        }
+      } catch (e) {
+        state = LoginFailure(e.toString());
+        log(e.toString());
       }
     }
   }

@@ -1,4 +1,4 @@
-part of 'sign_up_provider.dart';
+part of 'auth_provider.dart';
 
 abstract class AuthState {
   const AuthState();

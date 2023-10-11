@@ -5,7 +5,7 @@ import 'package:test/core/extension/media_query.dart';
 import 'package:test/core/widget/custom_button.dart';
 import 'package:test/core/widget/custom_password_txt_field.dart';
 import 'package:test/core/widget/custom_txt_form.dart';
-import 'package:test/provider/authentication/signup_provider/sign_up_provider.dart';
+import 'package:test/provider/authentication/auth_provider/auth_provider.dart';
 import 'package:test/screen/widget/authentication_widget/terms_and_condition.dart';
 
 class CustomSignUPForm extends ConsumerWidget {
