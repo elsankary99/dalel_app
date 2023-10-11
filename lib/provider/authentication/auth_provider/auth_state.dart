@@ -36,5 +36,15 @@ class LogOutFailure extends AuthState {
   const LogOutFailure(this.message);
 }
 
+//? Reset Password
+class ResetPasswordLoading extends AuthState {}
+
+class ResetPasswordSuccess extends AuthState {}
+
+class ResetPasswordFailure extends AuthState {
+  final String message;
+  const ResetPasswordFailure(this.message);
+}
+
 //? termsAndCondition
 class TermsAndCondition extends AuthState {}

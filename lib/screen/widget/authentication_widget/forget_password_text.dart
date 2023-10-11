@@ -16,7 +16,7 @@ class ForgetPasswordText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
         InkWell(
-          onTap: () => context.router.push(const ForgetPasswordRoute()),
+          onTap: () => context.router.replace(const ForgetPasswordRoute()),
           child: Text(
             AppStrings.forgotPassword,
             style: CustomTextStyles.pacifico600style12

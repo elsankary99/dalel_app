@@ -18,6 +18,7 @@ class AuthProvider extends StateNotifier<AuthState> {
   bool activeTerms = false;
   GlobalKey<FormState> signUpKey = GlobalKey<FormState>();
   GlobalKey<FormState> loginKey = GlobalKey<FormState>();
+  GlobalKey<FormState> resetPasswordKey = GlobalKey<FormState>();
   Future<void> signUpWithEmailAndPassword() async {
     if (signUpKey.currentState!.validate()) {
       try {
@@ -99,6 +100,26 @@ class AuthProvider extends StateNotifier<AuthState> {
       log(e.toString());
 
       state = LogOutFailure(e.toString());
+    }
+  }
+
+  Future<void> resetPassword() async {
+    if (resetPasswordKey.currentState!.validate()) {
+      state = ResetPasswordLoading();
+      try {
+        await FirebaseAuth.instance
+            .sendPasswordResetEmail(email: emailAddress!);
+        state = ResetPasswordSuccess();
+        log('ResetPasswordSuccess.');
+      } on FirebaseAuthException catch (e) {
+        log(e.toString());
+
+        state = ResetPasswordFailure(e.toString());
+      } catch (e) {
+        log(e.toString());
+
+        state = ResetPasswordFailure(e.toString());
+      }
     }
   }
 
