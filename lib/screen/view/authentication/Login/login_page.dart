@@ -1,10 +1,13 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/extension/media_query.dart';
 import 'package:test/core/router/app_router.dart';
 import 'package:test/core/widget/custom_button.dart';
+import 'package:test/core/widget/custom_circle_indicator.dart';
+import 'package:test/core/widget/custom_toast.dart';
 import 'package:test/provider/authentication/auth_provider/auth_provider.dart';
 import 'package:test/screen/widget/authentication_widget/custom_login_form.dart';
 import 'package:test/screen/widget/authentication_widget/forget_password_text.dart';
@@ -19,6 +22,23 @@ class LoginPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final provider = ref.read(authProvider.notifier);
+    final state = ref.watch(authProvider);
+    ref.listen(
+      authProvider,
+      (previous, next) {
+        if (next is LoginFailure) {
+          customToast(title: next.message, color: Colors.red);
+        }
+        if (next is LoginSuccess) {
+          if (FirebaseAuth.instance.currentUser!.emailVerified) {
+            context.router.replace(const InitialRoute());
+            customToast(title: AppStrings.welcomeLBack);
+          } else {
+            context.router.replace(const VerifyEmailRoute());
+          }
+        }
+      },
+    );
 
     return Scaffold(
       body: CustomScrollView(
@@ -38,9 +58,12 @@ class LoginPage extends ConsumerWidget {
               SizedBox(height: context.height * 0.07),
               CustomButton(
                   text: AppStrings.signIn,
-                  onPressed: () {
-                    provider.login();
-                  }),
+                  onPressed: () async {
+                    await provider.login();
+                  },
+                  child: state is LoginLoading
+                      ? const CustomCircleIndicator()
+                      : null),
               SizedBox(height: context.height * 0.02),
               HaveAccountOrNot(
                   onTap: () => context.router.replace(const SignUpRoute()),

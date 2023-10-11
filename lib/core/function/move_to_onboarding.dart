@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -11,10 +9,8 @@ moveToOnBoarding(BuildContext context, bool skipOnBoarding) {
     () {
       if (FirebaseAuth.instance.currentUser != null &&
           FirebaseAuth.instance.currentUser!.emailVerified) {
-        log("+++++If++++");
         context.router.replace(const InitialRoute());
       } else {
-        log("+++++Else++++");
         context.router.replace(
             skipOnBoarding ? const LoginRoute() : const OnBoardingRoute());
       }
