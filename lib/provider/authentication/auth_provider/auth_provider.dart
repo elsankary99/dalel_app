@@ -21,20 +21,32 @@ class AuthProvider extends StateNotifier<AuthState> {
   Future<void> signUpWithEmailAndPassword() async {
     if (signUpKey.currentState!.validate()) {
       try {
+        log("SignUpLoading");
         state = SignUpLoading();
         await FirebaseAuth.instance.createUserWithEmailAndPassword(
           email: emailAddress!,
           password: password!,
         );
+        log("SignUpSuccess");
+
         state = SignUpSuccess();
       } on FirebaseAuthException catch (e) {
         if (e.code == 'weak-password') {
+          log('The password provided is too weak.');
+
           state = const SignUpFailure('The password provided is too weak.');
         } else if (e.code == 'email-already-in-use') {
+          log('The account already exists for that email.');
+
           state =
               const SignUpFailure('The account already exists for that email.');
+        } else {
+          log(e.toString());
+
+          state = SignUpFailure(e.toString());
         }
       } catch (e) {
+        log(e.toString());
         state = SignUpFailure(e.toString());
       }
     }

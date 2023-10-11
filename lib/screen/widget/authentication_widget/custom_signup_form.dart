@@ -3,7 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/extension/media_query.dart';
 import 'package:test/core/widget/custom_button.dart';
+import 'package:test/core/widget/custom_circle_indicator.dart';
 import 'package:test/core/widget/custom_password_txt_field.dart';
+import 'package:test/core/widget/custom_toast.dart';
 import 'package:test/core/widget/custom_txt_form.dart';
 import 'package:test/provider/authentication/auth_provider/auth_provider.dart';
 import 'package:test/screen/widget/authentication_widget/terms_and_condition.dart';
@@ -14,7 +16,18 @@ class CustomSignUPForm extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final provider = ref.read(authProvider.notifier);
-    ref.watch(authProvider);
+    final state = ref.watch(authProvider);
+    ref.listen(
+      authProvider,
+      (previous, next) {
+        if (next is SignUpFailure) {
+          customToast(title: next.message, color: Colors.red);
+        }
+        if (next is SignUpSuccess) {
+          customToast(title: AppStrings.accountCreatedSuccessfully);
+        }
+      },
+    );
     return Form(
       key: provider.signUpKey,
       child: Column(
@@ -46,9 +59,12 @@ class CustomSignUPForm extends ConsumerWidget {
               text: AppStrings.signUp,
               onPressed: provider.activeTerms
                   ? () async {
+                      // log("${FirebaseAuth.instance.currentUser?.emailVerified}===+");
                       await provider.signUpWithEmailAndPassword();
                     }
-                  : null)
+                  : null,
+              child:
+                  state is SignUpLoading ? const CustomCircleIndicator() : null)
         ],
       ),
     );

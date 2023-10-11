@@ -85,5 +85,14 @@ abstract class AppStrings {
       enter4DigitCodeWeHaveSentTo = "Enter 4 digit code we have sent\n to ",
       haventReceivedVerificationCode = "Haven’t received verification code?",
       requiredField = "This Field is required",
-      passwordError = "password must be at least 6 characters";
+      accountCreatedSuccessfully = "Account Created Successfully",
+      verifyYourEmailAddress = 'Verify your email address',
+      verifyYourEmailAddress3 =
+          'If not auto redirected after verification, click\n on the Continue button.',
+      verifyYourEmailAddress2 =
+          'We have just send email verification link on\n your email. Please check email and click on\n that link to verify your Email address.',
+      passwordError = "password must be at least 6 characters",
+      welcomeToOurApp = 'Welcome to our app 🤍',
+      kContinue = "continue",
+      welcomeLBack = 'Welcome Back 🤍';
 }

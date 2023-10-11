@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:test/core/constant/app_colors.dart';
 
 customToast({required String title, Color? color}) {
   Fluttertoast.showToast(
@@ -7,7 +8,7 @@ customToast({required String title, Color? color}) {
       toastLength: Toast.LENGTH_SHORT,
       gravity: ToastGravity.BOTTOM,
       timeInSecForIosWeb: 1,
-      backgroundColor: color ?? Colors.orange,
+      backgroundColor: color ?? AppColors.primaryColor,
       textColor: Colors.white,
       fontSize: 18);
 }

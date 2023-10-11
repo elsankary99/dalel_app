@@ -8,9 +8,11 @@ class CustomButton extends StatelessWidget {
     super.key,
     required this.text,
     this.onPressed,
+    this.child,
   });
   final String text;
   final VoidCallback? onPressed;
+  final Widget? child;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -22,12 +24,14 @@ class CustomButton extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)),
                 backgroundColor: AppColors.primaryColor),
-            child: Text(
-              text,
-              style: CustomTextStyles.poppins500style24.copyWith(
-                  fontSize: 18,
-                  color:
-                      onPressed == null ? AppColors.brown : AppColors.offWhite),
-            )));
+            child: child ??
+                Text(
+                  text,
+                  style: CustomTextStyles.poppins500style24.copyWith(
+                      fontSize: 18,
+                      color: onPressed == null
+                          ? AppColors.brown
+                          : AppColors.offWhite),
+                )));
   }
 }
