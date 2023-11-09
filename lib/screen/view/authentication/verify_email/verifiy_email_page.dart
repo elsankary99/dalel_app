@@ -82,6 +82,8 @@ class VerifyEmailPage extends ConsumerWidget {
                 onPressed: () async {
                   await FirebaseAuth.instance.currentUser!
                       .sendEmailVerification();
+                  customToast(
+                      title: "We send the verification link to your email");
                 },
                 child: const Text(
                   "Resend E-Mail Link",

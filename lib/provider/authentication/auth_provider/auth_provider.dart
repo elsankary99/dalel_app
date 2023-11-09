@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -29,6 +30,7 @@ class AuthProvider extends StateNotifier<AuthState> {
           password: password!,
         );
         log("SignUpSuccess");
+        await addUserProfile();
         await sendVerifyEmail();
         state = SignUpSuccess();
       } on FirebaseAuthException catch (e) {
@@ -131,5 +133,14 @@ class AuthProvider extends StateNotifier<AuthState> {
   void termsAndCondition(bool active) {
     activeTerms = active;
     state = TermsAndCondition();
+  }
+
+  Future<void> addUserProfile() async {
+    CollectionReference users = FirebaseFirestore.instance.collection('users');
+    await users.add({
+      'user_id': FirebaseAuth.instance.currentUser!.uid,
+      'first_name': firstName, // John Doe
+      'last_name': lastName, // Stokes and Sons
+    });
   }
 }
