@@ -10,7 +10,7 @@ import 'package:test/core/router/app_router.dart';
 import 'package:test/core/widget/custom_circle_indicator.dart';
 import 'package:test/core/widget/custom_dialog.dart';
 import 'package:test/core/widget/custom_toast.dart';
-import 'package:test/provider/authentication/auth_provider/auth_provider.dart';
+import 'package:test/provider/auth_provider/auth_provider.dart';
 import 'package:test/screen/widget/home_widget/user_information_widget.dart';
 import 'package:test/screen/widget/home_widget/user_setting_widget.dart';
 

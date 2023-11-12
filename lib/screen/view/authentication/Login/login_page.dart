@@ -8,7 +8,7 @@ import 'package:test/core/router/app_router.dart';
 import 'package:test/core/widget/custom_button.dart';
 import 'package:test/core/widget/custom_circle_indicator.dart';
 import 'package:test/core/widget/custom_toast.dart';
-import 'package:test/provider/authentication/auth_provider/auth_provider.dart';
+import 'package:test/provider/auth_provider/auth_provider.dart';
 import 'package:test/screen/widget/authentication_widget/custom_login_form.dart';
 import 'package:test/screen/widget/authentication_widget/forget_password_text.dart';
 import 'package:test/screen/widget/authentication_widget/have_account_or_not.dart';

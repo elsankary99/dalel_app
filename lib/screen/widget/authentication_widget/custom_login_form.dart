@@ -4,7 +4,7 @@ import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/extension/media_query.dart';
 import 'package:test/core/widget/custom_password_txt_field.dart';
 import 'package:test/core/widget/custom_txt_form.dart';
-import 'package:test/provider/authentication/auth_provider/auth_provider.dart';
+import 'package:test/provider/auth_provider/auth_provider.dart';
 
 class CustomLoginForm extends ConsumerWidget {
   const CustomLoginForm({super.key});
