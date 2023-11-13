@@ -1,36 +1,49 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:test/core/constant/app_images.dart';
-import 'package:test/core/constant/app_strings.dart';
+import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_text_style.dart';
 import 'package:test/core/extension/media_query.dart';
 
 class CustomHorizontalCard extends StatelessWidget {
   const CustomHorizontalCard({
     super.key,
+    required this.name,
+    required this.imageUrl,
   });
-
+  final String name;
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       width: context.width * 0.45,
-      child: Card(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: Text(
-                  AppStrings.ancientEgyptWars,
-                  textAlign: TextAlign.center,
-                  maxLines: 2,
-                  style: CustomTextStyles.poppins500style16,
-                ),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(8),
+            boxShadow: [
+              BoxShadow(color: AppColors.primaryColor, blurRadius: 2)
+            ]),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Text(
+                name,
+                textAlign: TextAlign.center,
+                maxLines: 2,
+                style: CustomTextStyles.poppins500style16,
               ),
-              const SizedBox(width: 5),
-              Image.asset(Assets.assetsImagesFrame)
-            ],
-          ),
+            ),
+            const SizedBox(width: 5),
+            SizedBox(
+              width: context.width * 0.21,
+              child: CachedNetworkImage(
+                imageUrl: imageUrl,
+                errorWidget: (context, url, error) => const Icon(Icons.error),
+              ),
+            ),
+          ],
         ),
       ),
     );

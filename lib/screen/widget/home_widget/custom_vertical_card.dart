@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test/core/constant/app_text_style.dart';
@@ -6,11 +7,11 @@ import 'package:test/core/extension/media_query.dart';
 class CustomVerticalCard extends StatelessWidget {
   const CustomVerticalCard({
     super.key,
-    required this.image,
-    required this.text,
+    required this.imageUrl,
+    required this.name,
   });
-  final String image;
-  final String text;
+  final String imageUrl;
+  final String name;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -25,9 +26,12 @@ class CustomVerticalCard extends StatelessWidget {
               child: ClipRRect(
                 borderRadius:
                     const BorderRadius.vertical(top: Radius.circular(6)),
-                child: Image.asset(
-                  image,
-                  fit: BoxFit.cover,
+                child: SizedBox(
+                  child: CachedNetworkImage(
+                    imageUrl: imageUrl,
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
+                  ),
                 ),
               ),
             ),
@@ -37,7 +41,7 @@ class CustomVerticalCard extends StatelessWidget {
                 vertical: 6,
               ),
               child: Text(
-                text,
+                name,
                 textAlign: TextAlign.center,
                 maxLines: 1,
                 style: CustomTextStyles.poppins500style16

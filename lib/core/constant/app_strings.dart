@@ -34,6 +34,10 @@ abstract class AppStrings {
       dontHaveAnAccount = "Don’t have an account ?  ",
       forgotPassword = "Forgot Password ?",
       forgotPass = "Forgot Password",
+      //!Collection
+      historicalPeriodsCollection = "HistoricalPeriods",
+      historicalCharactersCollection = "HistoricalCharacters",
+      historicalSouvenirsCollection = "HistoricalSouvenirs",
       //!Home Strings
       recommendations = "Recommendations",
       historicalPeriods = "Historical periods",
