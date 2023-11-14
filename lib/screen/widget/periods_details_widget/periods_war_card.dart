@@ -4,8 +4,8 @@ import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_text_style.dart';
 import 'package:test/core/extension/media_query.dart';
 
-class CustomHorizontalCard extends StatelessWidget {
-  const CustomHorizontalCard({
+class PeriodsWarCard extends StatelessWidget {
+  const PeriodsWarCard({
     super.key,
     required this.name,
     required this.imageUrl,

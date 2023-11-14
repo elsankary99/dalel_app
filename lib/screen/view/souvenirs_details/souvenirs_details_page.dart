@@ -5,8 +5,8 @@ import 'package:test/core/constant/app_strings.dart';
 import 'package:test/data/model/historycal_model/historycal_model.dart';
 import 'package:test/screen/widget/home_widget/head_text.dart';
 import 'package:test/screen/widget/home_widget/home_appbar_text.dart';
-import 'package:test/screen/widget/periods_details_widget/adout_periods_widget.dart';
-import 'package:test/screen/widget/periods_details_widget/recommendation_souvenirs.dart';
+import 'package:test/screen/widget/Souvenirs_details_widget/adout_souvenir_widget.dart';
+import 'package:test/screen/widget/Souvenirs_details_widget/recommendation_souvenirs.dart';
 
 @RoutePage()
 class SouvenirsDetailsPage extends StatelessWidget {
@@ -21,7 +21,7 @@ class SouvenirsDetailsPage extends StatelessWidget {
         actions: const [HomeAppBarText()],
       ),
       body: CustomScrollView(physics: const BouncingScrollPhysics(), slivers: [
-        SliverToBoxAdapter(child: AboutPeriodsWidget(data: data)),
+        SliverToBoxAdapter(child: AboutSouvenirsWidget(data: data)),
         SliverToBoxAdapter(
             child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 10.w),

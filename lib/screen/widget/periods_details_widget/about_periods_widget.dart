@@ -31,7 +31,6 @@ class AboutPeriodsWidget extends StatelessWidget {
           height: context.height * 0.36,
         ),
       ),
-      SizedBox(height: 10.h),
       Padding(
         padding: EdgeInsets.symmetric(horizontal: 10.w),
         child: Text(

@@ -8,7 +8,6 @@ import 'package:test/screen/widget/home_widget/head_text.dart';
 import 'package:test/screen/widget/home_widget/home_appbar_text.dart';
 import 'package:test/screen/widget/character_details_widget/about_character_widget.dart';
 import 'package:test/screen/widget/character_details_widget/charcater_war.dart';
-import 'package:test/screen/widget/character_details_widget/recommendation_list.dart';
 
 @RoutePage()
 class CharacterDetailsPage extends ConsumerWidget {
@@ -29,8 +28,6 @@ class CharacterDetailsPage extends ConsumerWidget {
           SliverToBoxAdapter(child: AboutCharacterWidget(data: data)),
           SliverToBoxAdapter(child: HeadText(data.name! + AppStrings.wars)),
           const SliverToBoxAdapter(child: CharacterWar()),
-          const SliverToBoxAdapter(child: HeadText(AppStrings.recommendations)),
-          SliverToBoxAdapter(child: RecommendationList(data: data)),
           SliverToBoxAdapter(child: SizedBox(height: 20.h)),
         ]),
       ),

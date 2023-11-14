@@ -93,6 +93,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const VerifyEmailPage(),
       );
     },
+    WarDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<WarDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: WarDetailsPage(
+          args.data,
+          key: args.key,
+        ),
+      );
+    },
   };
 }
 
@@ -320,4 +330,42 @@ class VerifyEmailRoute extends PageRouteInfo<void> {
   static const String name = 'VerifyEmailRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [WarDetailsPage]
+class WarDetailsRoute extends PageRouteInfo<WarDetailsRouteArgs> {
+  WarDetailsRoute({
+    required HistoricalModel data,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          WarDetailsRoute.name,
+          args: WarDetailsRouteArgs(
+            data: data,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'WarDetailsRoute';
+
+  static const PageInfo<WarDetailsRouteArgs> page =
+      PageInfo<WarDetailsRouteArgs>(name);
+}
+
+class WarDetailsRouteArgs {
+  const WarDetailsRouteArgs({
+    required this.data,
+    this.key,
+  });
+
+  final HistoricalModel data;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'WarDetailsRouteArgs{data: $data, key: $key}';
+  }
 }

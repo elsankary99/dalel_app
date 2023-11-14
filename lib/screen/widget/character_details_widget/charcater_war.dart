@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:test/core/extension/media_query.dart';
+import 'package:test/core/router/app_router.dart';
 import 'package:test/core/widget/horizontal_shimmer.dart';
 import 'package:test/provider/characters_provider/character_war_provider.dart';
 import 'package:test/screen/widget/home_widget/custom_horizontal_card.dart';
@@ -23,7 +25,11 @@ class CharacterWar extends ConsumerWidget {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 5, vertical: 8),
                   child: CustomHorizontalCard(
-                      imageUrl: data[index].imageUrl!, name: data[index].name!),
+                      onTap: () {
+                        context.router.push(WarDetailsRoute(data: data[index]));
+                      },
+                      imageUrl: data[index].imageUrl!,
+                      name: data[index].name!),
                 );
               },
             ),
