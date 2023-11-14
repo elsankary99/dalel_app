@@ -5,8 +5,8 @@ import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_text_style.dart';
 import 'package:test/core/extension/media_query.dart';
 
-class CustomVerticalCard extends StatelessWidget {
-  const CustomVerticalCard({
+class RecommendationWidget extends StatelessWidget {
+  const RecommendationWidget({
     super.key,
     required this.imageUrl,
     required this.name,

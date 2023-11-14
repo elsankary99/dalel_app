@@ -1,0 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:test/core/constant/app_strings.dart';
+import 'package:test/data/model/historycal_model/historycal_model.dart';
+
+final recommendationProvider =
+    FutureProvider<List<HistoricalModel>>((ref) async {
+  final response = await FirebaseFirestore.instance
+      .collection(AppStrings.historicalCharactersCollection)
+      .get();
+  final data = response.docs;
+  return data.map((e) => HistoricalModel.fromJson(e.id, e.data())).toList();
+});

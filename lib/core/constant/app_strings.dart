@@ -85,6 +85,8 @@ abstract class AppStrings {
       sendResetPasswordLink = "Send Reset Password Link",
       verificationNow = "Verification Now",
       resendCode = "Resend Code",
+      about = "About ",
+      wars = " Wars",
       verifyAccount = "Verify Account",
       enter4DigitCodeWeHaveSentTo = "Enter 4 digit code we have sent\n to ",
       haventReceivedVerificationCode = "Haven’t received verification code?",

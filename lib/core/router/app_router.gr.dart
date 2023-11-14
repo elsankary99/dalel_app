@@ -27,6 +27,16 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const InitialPage(),
       );
     },
+    ItemDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<ItemDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ItemDetailsPage(
+          data: args.data,
+          key: args.key,
+        ),
+      );
+    },
     LoginRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -92,6 +102,44 @@ class InitialRoute extends PageRouteInfo<void> {
   static const String name = 'InitialRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ItemDetailsPage]
+class ItemDetailsRoute extends PageRouteInfo<ItemDetailsRouteArgs> {
+  ItemDetailsRoute({
+    required HistoricalModel data,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ItemDetailsRoute.name,
+          args: ItemDetailsRouteArgs(
+            data: data,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ItemDetailsRoute';
+
+  static const PageInfo<ItemDetailsRouteArgs> page =
+      PageInfo<ItemDetailsRouteArgs>(name);
+}
+
+class ItemDetailsRouteArgs {
+  const ItemDetailsRouteArgs({
+    required this.data,
+    this.key,
+  });
+
+  final HistoricalModel data;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'ItemDetailsRouteArgs{data: $data, key: $key}';
+  }
 }
 
 /// generated route for

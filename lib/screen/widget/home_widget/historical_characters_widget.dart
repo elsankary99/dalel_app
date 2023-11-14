@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:test/core/extension/media_query.dart';
-import 'package:test/core/widget/horizontal_shimmer.dart';
+import 'package:test/core/router/app_router.dart';
+import 'package:test/core/widget/virtical_shimmer.dart';
 import 'package:test/provider/characters_provider/characters_provider.dart';
 import 'package:test/screen/widget/home_widget/custom_vertical_card.dart';
 import 'package:test/screen/widget/home_widget/error_text.dart';
@@ -24,6 +26,9 @@ class HistoricalCharactersWidget extends ConsumerWidget {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8),
                   child: CustomVerticalCard(
+                    onTap: () {
+                      context.router.push(ItemDetailsRoute(data: data[index]));
+                    },
                     imageUrl: data[index].imageUrl!,
                     name: data[index].name!,
                   ),
@@ -38,7 +43,7 @@ class HistoricalCharactersWidget extends ConsumerWidget {
               itemBuilder: (context, index) {
                 return const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 5, vertical: 8),
-                  child: HorizontalShimmer(),
+                  child: VerticalShimmer(),
                 );
               },
             ),

@@ -18,7 +18,10 @@ class MyApp extends StatelessWidget {
               locale: DevicePreview.locale(context),
               builder: DevicePreview.appBuilder,
               debugShowCheckedModeBanner: false,
-              theme: ThemeData(scaffoldBackgroundColor: AppColors.offWhite),
+              theme: ThemeData(
+                  scaffoldBackgroundColor: AppColors.offWhite,
+                  appBarTheme: AppBarTheme(
+                      iconTheme: IconThemeData(color: AppColors.brown))),
               routerConfig: router.config(),
             ));
   }

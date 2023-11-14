@@ -1,4 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
+import 'package:test/data/model/historycal_model/historycal_model.dart';
 import 'package:test/screen/view/Home/initial_page.dart';
 import 'package:test/screen/view/Home/pages/my_cart/my_cart_page.dart';
 import 'package:test/screen/view/authentication/Login/login_page.dart';
@@ -6,6 +8,7 @@ import 'package:test/screen/view/OnBoarding/onboarding_page.dart';
 import 'package:test/screen/view/authentication/SignUp/signup_page.dart';
 import 'package:test/screen/view/authentication/forget_Password/forget_password_page.dart';
 import 'package:test/screen/view/authentication/verify_email/verifiy_email_page.dart';
+import 'package:test/screen/view/item_details/item_details.dart';
 import 'package:test/screen/view/splash/splash_page.dart';
 
 part 'app_router.gr.dart';
@@ -28,5 +31,6 @@ class AppRouter extends _$AppRouter {
         //? Home
         AutoRoute(page: InitialRoute.page),
         AutoRoute(page: MyCartRoute.page),
+        AutoRoute(page: ItemDetailsRoute.page),
       ];
 }
