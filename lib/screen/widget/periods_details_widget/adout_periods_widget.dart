@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/constant/app_text_style.dart';
 import 'package:test/core/extension/media_query.dart';
@@ -16,19 +17,29 @@ class AboutPeriodsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Text(
-        AppStrings.about + data.name!,
-        style: CustomTextStyles.poppins400style20,
+      Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
+        child: Text(
+          AppStrings.about + data.name!,
+          style: CustomTextStyles.poppins400style20,
+        ),
       ),
-      CachedNetworkImage(
-        imageUrl: data.imageUrl!,
-        height: context.height * 0.4,
-        width: context.width * 0.38,
+      SizedBox(height: 10.h),
+      Center(
+        child: CachedNetworkImage(
+          imageUrl: data.imageUrl!,
+          height: context.height * 0.36,
+        ),
       ),
-      Text(
-        data.description!,
-        style: CustomTextStyles.poppins500style14.copyWith(color: Colors.black),
-        maxLines: 10,
+      SizedBox(height: 10.h),
+      Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
+        child: Text(
+          data.description!,
+          style:
+              CustomTextStyles.poppins500style14.copyWith(color: Colors.black),
+          maxLines: 5,
+        ),
       ),
     ]);
   }

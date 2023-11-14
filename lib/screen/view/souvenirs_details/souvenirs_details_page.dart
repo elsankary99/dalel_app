@@ -1,9 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:test/core/constant/app_strings.dart';
 import 'package:test/data/model/historycal_model/historycal_model.dart';
+import 'package:test/screen/widget/home_widget/head_text.dart';
 import 'package:test/screen/widget/home_widget/home_appbar_text.dart';
 import 'package:test/screen/widget/periods_details_widget/adout_periods_widget.dart';
+import 'package:test/screen/widget/periods_details_widget/recommendation_souvenirs.dart';
 
 @RoutePage()
 class SouvenirsDetailsPage extends StatelessWidget {
@@ -17,18 +20,16 @@ class SouvenirsDetailsPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         actions: const [HomeAppBarText()],
       ),
-      body: Padding(
-        padding: EdgeInsetsDirectional.only(start: 10.w),
-        child:
-            CustomScrollView(physics: const BouncingScrollPhysics(), slivers: [
-          SliverToBoxAdapter(child: AboutPeriodsWidget(data: data)),
-          // SliverToBoxAdapter(child: HeadText(data.name! + AppStrings.wars)),
-          // const SliverToBoxAdapter(child: CharacterWar()),
-          // const SliverToBoxAdapter(child: HeadText(AppStrings.recommendations)),
-          // SliverToBoxAdapter(child: RecommendationList(data: data)),
-          SliverToBoxAdapter(child: SizedBox(height: 20.h)),
-        ]),
-      ),
+      body: CustomScrollView(physics: const BouncingScrollPhysics(), slivers: [
+        SliverToBoxAdapter(child: AboutPeriodsWidget(data: data)),
+        SliverToBoxAdapter(
+            child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.w),
+          child: const HeadText(AppStrings.recommendations),
+        )),
+        const SliverToBoxAdapter(child: RecommendationSouvenirs()),
+        SliverToBoxAdapter(child: SizedBox(height: 20.h)),
+      ]),
     );
   }
 }

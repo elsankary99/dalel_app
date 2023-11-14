@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:test/core/extension/media_query.dart';
 import 'package:test/core/router/app_router.dart';
 import 'package:test/core/widget/virtical_shimmer.dart';
@@ -8,11 +8,8 @@ import 'package:test/provider/souvenirs_provider/souvenirs_provider.dart';
 import 'package:test/screen/widget/home_widget/custom_vertical_card.dart';
 import 'package:test/screen/widget/home_widget/error_text.dart';
 
-class HistoricalSouvenirsWidget extends ConsumerWidget {
-  const HistoricalSouvenirsWidget({
-    super.key,
-  });
-
+class RecommendationSouvenirs extends ConsumerWidget {
+  const RecommendationSouvenirs({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return SizedBox(
