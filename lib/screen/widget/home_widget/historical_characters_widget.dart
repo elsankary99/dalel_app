@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:test/core/extension/media_query.dart';
 import 'package:test/core/router/app_router.dart';
 import 'package:test/core/widget/virtical_shimmer.dart';
+import 'package:test/provider/characters_provider/character_war_provider.dart';
 import 'package:test/provider/characters_provider/characters_provider.dart';
 import 'package:test/screen/widget/home_widget/custom_vertical_card.dart';
 import 'package:test/screen/widget/home_widget/error_text.dart';
@@ -27,7 +28,10 @@ class HistoricalCharactersWidget extends ConsumerWidget {
                   padding: const EdgeInsets.symmetric(vertical: 8),
                   child: CustomVerticalCard(
                     onTap: () {
-                      context.router.push(ItemDetailsRoute(data: data[index]));
+                      ref.read(characterIdProvider.notifier).state =
+                          data[index].id!;
+                      context.router
+                          .push(CharacterDetailsRoute(data: data[index]));
                     },
                     imageUrl: data[index].imageUrl!,
                     name: data[index].name!,

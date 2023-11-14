@@ -38,6 +38,7 @@ abstract class AppStrings {
       historicalPeriodsCollection = "HistoricalPeriods",
       historicalCharactersCollection = "HistoricalCharacters",
       historicalSouvenirsCollection = "HistoricalSouvenirs",
+      warCollection = "War",
       //!Home Strings
       recommendations = "Recommendations",
       historicalPeriods = "Historical periods",

@@ -6,13 +6,13 @@ import 'package:test/core/constant/app_strings.dart';
 import 'package:test/data/model/historycal_model/historycal_model.dart';
 import 'package:test/screen/widget/home_widget/head_text.dart';
 import 'package:test/screen/widget/home_widget/home_appbar_text.dart';
-import 'package:test/screen/widget/item_details_widget/about_character_widget.dart';
-import 'package:test/screen/widget/item_details_widget/charcater_war.dart';
-import 'package:test/screen/widget/item_details_widget/recommendation_list.dart';
+import 'package:test/screen/widget/character_details_widget/about_character_widget.dart';
+import 'package:test/screen/widget/character_details_widget/charcater_war.dart';
+import 'package:test/screen/widget/character_details_widget/recommendation_list.dart';
 
 @RoutePage()
-class ItemDetailsPage extends ConsumerWidget {
-  const ItemDetailsPage({required this.data, super.key});
+class CharacterDetailsPage extends ConsumerWidget {
+  const CharacterDetailsPage({required this.data, super.key});
   final HistoricalModel data;
   @override
   Widget build(BuildContext context, WidgetRef ref) {

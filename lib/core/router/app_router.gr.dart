@@ -15,6 +15,16 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    CharacterDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<CharacterDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: CharacterDetailsPage(
+          data: args.data,
+          key: args.key,
+        ),
+      );
+    },
     ForgetPasswordRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -25,16 +35,6 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const InitialPage(),
-      );
-    },
-    ItemDetailsRoute.name: (routeData) {
-      final args = routeData.argsAs<ItemDetailsRouteArgs>();
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: ItemDetailsPage(
-          data: args.data,
-          key: args.key,
-        ),
       );
     },
     LoginRoute.name: (routeData) {
@@ -55,10 +55,30 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const OnBoardingPage(),
       );
     },
+    PeriodsDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<PeriodsDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: PeriodsDetailsPage(
+          key: args.key,
+          data: args.data,
+        ),
+      );
+    },
     SignUpRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const SignUpPage(),
+      );
+    },
+    SouvenirsDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<SouvenirsDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: SouvenirsDetailsPage(
+          key: args.key,
+          data: args.data,
+        ),
       );
     },
     SplashRoute.name: (routeData) {
@@ -74,6 +94,44 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [CharacterDetailsPage]
+class CharacterDetailsRoute extends PageRouteInfo<CharacterDetailsRouteArgs> {
+  CharacterDetailsRoute({
+    required HistoricalModel data,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          CharacterDetailsRoute.name,
+          args: CharacterDetailsRouteArgs(
+            data: data,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'CharacterDetailsRoute';
+
+  static const PageInfo<CharacterDetailsRouteArgs> page =
+      PageInfo<CharacterDetailsRouteArgs>(name);
+}
+
+class CharacterDetailsRouteArgs {
+  const CharacterDetailsRouteArgs({
+    required this.data,
+    this.key,
+  });
+
+  final HistoricalModel data;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'CharacterDetailsRouteArgs{data: $data, key: $key}';
+  }
 }
 
 /// generated route for
@@ -102,44 +160,6 @@ class InitialRoute extends PageRouteInfo<void> {
   static const String name = 'InitialRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [ItemDetailsPage]
-class ItemDetailsRoute extends PageRouteInfo<ItemDetailsRouteArgs> {
-  ItemDetailsRoute({
-    required HistoricalModel data,
-    Key? key,
-    List<PageRouteInfo>? children,
-  }) : super(
-          ItemDetailsRoute.name,
-          args: ItemDetailsRouteArgs(
-            data: data,
-            key: key,
-          ),
-          initialChildren: children,
-        );
-
-  static const String name = 'ItemDetailsRoute';
-
-  static const PageInfo<ItemDetailsRouteArgs> page =
-      PageInfo<ItemDetailsRouteArgs>(name);
-}
-
-class ItemDetailsRouteArgs {
-  const ItemDetailsRouteArgs({
-    required this.data,
-    this.key,
-  });
-
-  final HistoricalModel data;
-
-  final Key? key;
-
-  @override
-  String toString() {
-    return 'ItemDetailsRouteArgs{data: $data, key: $key}';
-  }
 }
 
 /// generated route for
@@ -185,6 +205,44 @@ class OnBoardingRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [PeriodsDetailsPage]
+class PeriodsDetailsRoute extends PageRouteInfo<PeriodsDetailsRouteArgs> {
+  PeriodsDetailsRoute({
+    Key? key,
+    required HistoricalModel data,
+    List<PageRouteInfo>? children,
+  }) : super(
+          PeriodsDetailsRoute.name,
+          args: PeriodsDetailsRouteArgs(
+            key: key,
+            data: data,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'PeriodsDetailsRoute';
+
+  static const PageInfo<PeriodsDetailsRouteArgs> page =
+      PageInfo<PeriodsDetailsRouteArgs>(name);
+}
+
+class PeriodsDetailsRouteArgs {
+  const PeriodsDetailsRouteArgs({
+    this.key,
+    required this.data,
+  });
+
+  final Key? key;
+
+  final HistoricalModel data;
+
+  @override
+  String toString() {
+    return 'PeriodsDetailsRouteArgs{key: $key, data: $data}';
+  }
+}
+
+/// generated route for
 /// [SignUpPage]
 class SignUpRoute extends PageRouteInfo<void> {
   const SignUpRoute({List<PageRouteInfo>? children})
@@ -196,6 +254,44 @@ class SignUpRoute extends PageRouteInfo<void> {
   static const String name = 'SignUpRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SouvenirsDetailsPage]
+class SouvenirsDetailsRoute extends PageRouteInfo<SouvenirsDetailsRouteArgs> {
+  SouvenirsDetailsRoute({
+    Key? key,
+    required HistoricalModel data,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SouvenirsDetailsRoute.name,
+          args: SouvenirsDetailsRouteArgs(
+            key: key,
+            data: data,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'SouvenirsDetailsRoute';
+
+  static const PageInfo<SouvenirsDetailsRouteArgs> page =
+      PageInfo<SouvenirsDetailsRouteArgs>(name);
+}
+
+class SouvenirsDetailsRouteArgs {
+  const SouvenirsDetailsRouteArgs({
+    this.key,
+    required this.data,
+  });
+
+  final Key? key;
+
+  final HistoricalModel data;
+
+  @override
+  String toString() {
+    return 'SouvenirsDetailsRouteArgs{key: $key, data: $data}';
+  }
 }
 
 /// generated route for

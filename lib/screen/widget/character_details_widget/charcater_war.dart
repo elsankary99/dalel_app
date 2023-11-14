@@ -2,7 +2,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:test/core/extension/media_query.dart';
 import 'package:test/core/widget/horizontal_shimmer.dart';
-import 'package:test/provider/periods_provider/periods_provider.dart';
+import 'package:test/provider/characters_provider/character_war_provider.dart';
 import 'package:test/screen/widget/home_widget/custom_horizontal_card.dart';
 import 'package:test/screen/widget/home_widget/error_text.dart';
 
@@ -13,7 +13,7 @@ class CharacterWar extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return SizedBox(
       height: context.height * 0.15,
-      child: ref.watch(periodsProvider).when(
+      child: ref.watch(characterWarsProvider).when(
             data: (data) => ListView.builder(
               physics: const BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,

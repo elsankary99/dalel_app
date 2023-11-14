@@ -8,7 +8,9 @@ import 'package:test/screen/view/OnBoarding/onboarding_page.dart';
 import 'package:test/screen/view/authentication/SignUp/signup_page.dart';
 import 'package:test/screen/view/authentication/forget_Password/forget_password_page.dart';
 import 'package:test/screen/view/authentication/verify_email/verifiy_email_page.dart';
-import 'package:test/screen/view/item_details/item_details.dart';
+import 'package:test/screen/view/character_details/character_details.dart';
+import 'package:test/screen/view/periods_details/periods_details_page.dart';
+import 'package:test/screen/view/souvenirs_details/souvenirs_details_page.dart';
 import 'package:test/screen/view/splash/splash_page.dart';
 
 part 'app_router.gr.dart';
@@ -31,6 +33,8 @@ class AppRouter extends _$AppRouter {
         //? Home
         AutoRoute(page: InitialRoute.page),
         AutoRoute(page: MyCartRoute.page),
-        AutoRoute(page: ItemDetailsRoute.page),
+        AutoRoute(page: CharacterDetailsRoute.page),
+        AutoRoute(page: PeriodsDetailsRoute.page),
+        AutoRoute(page: SouvenirsDetailsRoute.page),
       ];
 }
