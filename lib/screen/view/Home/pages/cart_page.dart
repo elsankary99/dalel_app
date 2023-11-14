@@ -7,10 +7,8 @@ import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/extension/media_query.dart';
 import 'package:test/core/router/app_router.dart';
+import 'package:test/screen/widget/home_widget/bazar_history_books_list.dart';
 import 'package:test/screen/widget/home_widget/head_text.dart';
-import 'package:test/screen/widget/home_widget/historical_characters_widget.dart';
-import 'package:test/screen/widget/home_widget/historical_periods_widget.dart';
-import 'package:test/screen/widget/home_widget/historical_souvenirs_widget.dart';
 
 class CartPage extends ConsumerWidget {
   const CartPage({super.key});
@@ -22,17 +20,12 @@ class CartPage extends ConsumerWidget {
         CustomScrollView(
           physics: const BouncingScrollPhysics(),
           slivers: [
-            const SliverToBoxAdapter(
-                child: HeadText(AppStrings.historicalPeriods)),
-            const SliverToBoxAdapter(child: HistoricalPeriodsWidget()),
+            const SliverToBoxAdapter(child: HeadText(AppStrings.historyBooks)),
+            const SliverToBoxAdapter(child: BazarHistoryBooksList()),
             SliverToBoxAdapter(child: SizedBox(height: context.height * 0.015)),
             const SliverToBoxAdapter(
-                child: HeadText(AppStrings.historicalCharacters)),
-            const SliverToBoxAdapter(child: HistoricalCharactersWidget()),
-            SliverToBoxAdapter(child: SizedBox(height: context.height * 0.025)),
-            const SliverToBoxAdapter(
                 child: HeadText(AppStrings.historicalSouvenirs)),
-            const SliverToBoxAdapter(child: HistoricalSouvenirsWidget()),
+            const SliverToBoxAdapter(child: BazarHistoryBooksList()),
           ],
         ),
         Positioned(
