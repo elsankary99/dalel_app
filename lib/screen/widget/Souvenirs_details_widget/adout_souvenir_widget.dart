@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:readmore/readmore.dart';
+import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/constant/app_text_style.dart';
 import 'package:test/core/extension/media_query.dart';
@@ -34,11 +36,18 @@ class AboutSouvenirsWidget extends StatelessWidget {
       SizedBox(height: 10.h),
       Padding(
         padding: EdgeInsets.symmetric(horizontal: 10.w),
-        child: Text(
+        child: ReadMoreText(
           data.description!,
+          trimLines: 5,
           style:
               CustomTextStyles.poppins500style14.copyWith(color: Colors.black),
-          maxLines: 5,
+          trimMode: TrimMode.Line,
+          trimCollapsedText: 'Show more',
+          trimExpandedText: 'Show less',
+          lessStyle: CustomTextStyles.poppins300style16
+              .copyWith(color: AppColors.primaryColor),
+          moreStyle: CustomTextStyles.poppins300style16
+              .copyWith(color: AppColors.primaryColor),
         ),
       ),
     ]);

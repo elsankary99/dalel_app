@@ -1,6 +1,8 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:test/core/extension/media_query.dart';
+import 'package:test/core/router/app_router.dart';
 import 'package:test/core/widget/virtical_shimmer.dart';
 import 'package:test/provider/bazar_historical_souvenirs/bazar_historical_souvenirs_provider.dart';
 import 'package:test/screen/widget/home_widget/custom_vertical_card.dart';
@@ -22,7 +24,9 @@ class BazarHistoricalSouvenirsList extends ConsumerWidget {
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 8),
                   child: CustomVerticalCard(
-                    onTap: () {},
+                    onTap: () {
+                      context.router.push(BazarDetailsRoute(data: data[index]));
+                    },
                     imageUrl: data[index].imageUrl!,
                     name: data[index].name!,
                   ),

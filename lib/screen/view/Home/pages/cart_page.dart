@@ -7,6 +7,7 @@ import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/extension/media_query.dart';
 import 'package:test/core/router/app_router.dart';
+import 'package:test/screen/widget/home_widget/bazar_historical_souvenirs_list.dart';
 import 'package:test/screen/widget/home_widget/bazar_history_books_list.dart';
 import 'package:test/screen/widget/home_widget/head_text.dart';
 
@@ -25,7 +26,7 @@ class CartPage extends ConsumerWidget {
             SliverToBoxAdapter(child: SizedBox(height: context.height * 0.015)),
             const SliverToBoxAdapter(
                 child: HeadText(AppStrings.historicalSouvenirs)),
-            const SliverToBoxAdapter(child: BazarHistoryBooksList()),
+            const SliverToBoxAdapter(child: BazarHistoricalSouvenirsList()),
           ],
         ),
         Positioned(

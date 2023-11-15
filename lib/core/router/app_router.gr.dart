@@ -15,6 +15,16 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    BazarDetailsRoute.name: (routeData) {
+      final args = routeData.argsAs<BazarDetailsRouteArgs>();
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: BazarDetailsPage(
+          args.data,
+          key: args.key,
+        ),
+      );
+    },
     CharacterDetailsRoute.name: (routeData) {
       final args = routeData.argsAs<CharacterDetailsRouteArgs>();
       return AutoRoutePage<dynamic>(
@@ -104,6 +114,44 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [BazarDetailsPage]
+class BazarDetailsRoute extends PageRouteInfo<BazarDetailsRouteArgs> {
+  BazarDetailsRoute({
+    required BazarModel data,
+    Key? key,
+    List<PageRouteInfo>? children,
+  }) : super(
+          BazarDetailsRoute.name,
+          args: BazarDetailsRouteArgs(
+            data: data,
+            key: key,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'BazarDetailsRoute';
+
+  static const PageInfo<BazarDetailsRouteArgs> page =
+      PageInfo<BazarDetailsRouteArgs>(name);
+}
+
+class BazarDetailsRouteArgs {
+  const BazarDetailsRouteArgs({
+    required this.data,
+    this.key,
+  });
+
+  final BazarModel data;
+
+  final Key? key;
+
+  @override
+  String toString() {
+    return 'BazarDetailsRouteArgs{data: $data, key: $key}';
+  }
 }
 
 /// generated route for
