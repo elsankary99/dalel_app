@@ -28,9 +28,12 @@ class AboutSouvenirsWidget extends StatelessWidget {
       ),
       SizedBox(height: 10.h),
       Center(
-        child: CachedNetworkImage(
-          imageUrl: data.imageUrl!,
-          height: context.height * 0.36,
+        child: Hero(
+          tag: data.imageUrl!,
+          child: CachedNetworkImage(
+            imageUrl: data.imageUrl!,
+            height: context.height * 0.36,
+          ),
         ),
       ),
       SizedBox(height: 10.h),

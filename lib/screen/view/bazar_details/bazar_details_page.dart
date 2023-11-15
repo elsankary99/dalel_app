@@ -32,9 +32,12 @@ class BazarDetailsPage extends ConsumerWidget {
                 SliverToBoxAdapter(
                     child: SizedBox(height: context.height * 0.02)),
                 SliverToBoxAdapter(
-                    child: CachedNetworkImage(
-                  imageUrl: data.imageUrl!,
-                  height: context.height * 0.25,
+                    child: Hero(
+                  tag: data.imageUrl!,
+                  child: CachedNetworkImage(
+                    imageUrl: data.imageUrl!,
+                    height: context.height * 0.25,
+                  ),
                 )),
                 SliverToBoxAdapter(
                     child: SizedBox(height: context.height * 0.02)),

@@ -10,7 +10,6 @@ import 'package:test/screen/view/Home/pages/cart_page.dart';
 import 'package:test/screen/view/Home/pages/home_page.dart';
 import 'package:test/screen/view/Home/pages/search_page.dart';
 import 'package:test/screen/view/Home/pages/user_page.dart';
-import 'package:test/screen/widget/home_widget/home_appbar_text.dart';
 
 @RoutePage()
 class InitialPage extends ConsumerStatefulWidget {
@@ -50,17 +49,6 @@ class _HomePageState extends ConsumerState<InitialPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        automaticallyImplyLeading: false,
-        leading: Icon(
-          FontAwesomeIcons.gripLines,
-          color: AppColors.deepBrown,
-        ),
-        // title: Image.asset(Assets.assetsImagesPyramid),
-        backgroundColor: Colors.transparent,
-        actions: const [HomeAppBarText()],
-      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: TabBarView(

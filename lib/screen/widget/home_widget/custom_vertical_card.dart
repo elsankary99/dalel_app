@@ -36,7 +36,8 @@ class CustomVerticalCard extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius:
                       const BorderRadius.vertical(top: Radius.circular(6)),
-                  child: SizedBox(
+                  child: Hero(
+                    tag: imageUrl,
                     child: CachedNetworkImage(
                       imageUrl: imageUrl,
                       errorWidget: (context, url, error) =>

@@ -43,10 +43,13 @@ class AboutCharacterWidget extends StatelessWidget {
                       .copyWith(color: AppColors.primaryColor),
                 ),
               ),
-              CachedNetworkImage(
-                imageUrl: data.imageUrl!,
-                height: context.height * 0.4,
-                width: context.width * 0.38,
+              Hero(
+                tag: data.imageUrl!,
+                child: CachedNetworkImage(
+                  imageUrl: data.imageUrl!,
+                  height: context.height * 0.4,
+                  width: context.width * 0.38,
+                ),
               )
             ],
           )

@@ -42,9 +42,13 @@ class CustomHorizontalCard extends StatelessWidget {
               const SizedBox(width: 5),
               SizedBox(
                 width: context.width * 0.21,
-                child: CachedNetworkImage(
-                  imageUrl: imageUrl,
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                child: Hero(
+                  tag: imageUrl,
+                  child: CachedNetworkImage(
+                    imageUrl: imageUrl,
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.error),
+                  ),
                 ),
               ),
             ],
