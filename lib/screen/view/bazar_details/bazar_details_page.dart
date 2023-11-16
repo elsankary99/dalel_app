@@ -1,13 +1,14 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:readmore/readmore.dart';
 import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_text_style.dart';
 import 'package:test/core/extension/media_query.dart';
+import 'package:test/core/widget/custom_circle_indicator.dart';
+import 'package:test/core/widget/custom_toast.dart';
 import 'package:test/data/model/bazar_model/bazar_model.dart';
+import 'package:test/provider/cart_provider/cart_provider.dart';
+import 'package:test/screen/widget/bazar_details_widget/bazar_details_body.dart';
 import 'package:test/screen/widget/home_widget/home_appbar_text.dart';
 
 @RoutePage()
@@ -16,6 +17,21 @@ class BazarDetailsPage extends ConsumerWidget {
   final BazarModel data;
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final provider = ref.read(cartProvider.notifier);
+    final state = ref.watch(cartProvider);
+    ref.listen(
+      cartProvider,
+      (previous, next) {
+        if (next is AddToCartError) {
+          customToast(title: next.message, color: Colors.red);
+        }
+        if (next is AddToCartSuccess) {
+          customToast(title: "Item Add To Cart Successfully");
+          ref.invalidate(getDalelCartProvider);
+        }
+      },
+    );
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
@@ -24,70 +40,7 @@ class BazarDetailsPage extends ConsumerWidget {
       ),
       body: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: CustomScrollView(
-              physics: const BouncingScrollPhysics(),
-              slivers: [
-                SliverToBoxAdapter(
-                    child: SizedBox(height: context.height * 0.02)),
-                SliverToBoxAdapter(
-                    child: Hero(
-                  tag: data.imageUrl!,
-                  child: CachedNetworkImage(
-                    imageUrl: data.imageUrl!,
-                    height: context.height * 0.25,
-                  ),
-                )),
-                SliverToBoxAdapter(
-                    child: SizedBox(height: context.height * 0.02)),
-                SliverToBoxAdapter(
-                  child: Center(
-                    child: Text(
-                      data.name!,
-                      style: CustomTextStyles.poppins500style18.copyWith(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18.sp),
-                    ),
-                  ),
-                ),
-                SliverToBoxAdapter(
-                    child: SizedBox(height: context.height * 0.02)),
-                SliverToBoxAdapter(
-                  child: Center(
-                    child: Text(
-                      "Price : " + data.price! + r" $",
-                      style: CustomTextStyles.poppins500style18.copyWith(
-                          color: AppColors.deepBrown,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 18.sp),
-                    ),
-                  ),
-                ),
-                SliverToBoxAdapter(
-                    child: SizedBox(height: context.height * 0.02)),
-                SliverToBoxAdapter(
-                  child: Center(
-                    child: ReadMoreText(
-                      data.description!,
-                      trimLines: 3,
-                      style: CustomTextStyles.poppins300style16,
-                      trimMode: TrimMode.Line,
-                      trimCollapsedText: 'Show more',
-                      trimExpandedText: 'Show less',
-                      lessStyle: CustomTextStyles.poppins300style16
-                          .copyWith(color: AppColors.primaryColor),
-                      moreStyle: CustomTextStyles.poppins300style16
-                          .copyWith(color: AppColors.primaryColor),
-                    ),
-                  ),
-                ),
-                SliverToBoxAdapter(
-                    child: SizedBox(height: context.height * 0.16)),
-              ],
-            ),
-          ),
+          BazarDetailsBody(data: data),
           Positioned(
               bottom: 0,
               right: 0,
@@ -101,16 +54,22 @@ class BazarDetailsPage extends ConsumerWidget {
                   child: SizedBox(
                     height: context.height * 0.065,
                     width: context.width * 0.7,
-                    child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(50)),
-                            backgroundColor: AppColors.deepBrown),
-                        child: Text(
-                          "Add To Cart",
-                          style: CustomTextStyles.poppins400style14,
-                        )),
+                    child: state is AddToCartLoading
+                        ? CustomCircleIndicator(
+                            color: AppColors.brown,
+                          )
+                        : ElevatedButton(
+                            onPressed: () {
+                              provider.addToCart(data);
+                            },
+                            style: ElevatedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(50)),
+                                backgroundColor: AppColors.deepBrown),
+                            child: Text(
+                              "Add To Cart",
+                              style: CustomTextStyles.poppins400style14,
+                            )),
                   ),
                 ),
               ))
