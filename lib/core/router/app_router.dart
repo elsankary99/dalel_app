@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:test/data/model/bazar_model/bazar_model.dart';
 import 'package:test/data/model/historycal_model/historycal_model.dart';
 import 'package:test/screen/view/Home/initial_page.dart';
-import 'package:test/screen/view/Home/pages/my_cart/my_cart_page.dart';
+import 'package:test/screen/view/my_cart/my_cart_page.dart';
 import 'package:test/screen/view/authentication/Login/login_page.dart';
 import 'package:test/screen/view/OnBoarding/onboarding_page.dart';
 import 'package:test/screen/view/authentication/SignUp/signup_page.dart';
