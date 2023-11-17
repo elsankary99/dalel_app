@@ -8,6 +8,7 @@ import 'package:test/core/extension/media_query.dart';
 import 'package:test/screen/widget/home_widget/custom_search_feild.dart';
 import 'package:test/screen/widget/home_widget/home_appbar_text.dart';
 import 'package:test/screen/widget/home_widget/list_of_type.dart';
+import 'package:test/screen/widget/home_widget/search_on_bazar.dart';
 
 class SearchPage extends ConsumerWidget {
   const SearchPage({super.key});
@@ -34,6 +35,9 @@ class SearchPage extends ConsumerWidget {
                 style: CustomTextStyles.poppins600style12)),
         SliverToBoxAdapter(child: SizedBox(height: context.height * 0.015)),
         const SliverToBoxAdapter(child: ListOfType()),
+
+        //?=====
+        const SliverToBoxAdapter(child: SearchOnBazarList()),
       ],
     );
   }
