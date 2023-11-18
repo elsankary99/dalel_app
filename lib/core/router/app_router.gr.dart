@@ -35,6 +35,12 @@ abstract class _$AppRouter extends RootStackRouter {
         ),
       );
     },
+    CheckoutRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const CheckoutPage(),
+      );
+    },
     ForgetPasswordRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -63,6 +69,12 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const OnBoardingPage(),
+      );
+    },
+    OrderSuccessRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const OrderSuccessPage(),
       );
     },
     PeriodsDetailsRoute.name: (routeData) {
@@ -193,6 +205,20 @@ class CharacterDetailsRouteArgs {
 }
 
 /// generated route for
+/// [CheckoutPage]
+class CheckoutRoute extends PageRouteInfo<void> {
+  const CheckoutRoute({List<PageRouteInfo>? children})
+      : super(
+          CheckoutRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CheckoutRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [ForgetPasswordPage]
 class ForgetPasswordRoute extends PageRouteInfo<void> {
   const ForgetPasswordRoute({List<PageRouteInfo>? children})
@@ -258,6 +284,20 @@ class OnBoardingRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'OnBoardingRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [OrderSuccessPage]
+class OrderSuccessRoute extends PageRouteInfo<void> {
+  const OrderSuccessRoute({List<PageRouteInfo>? children})
+      : super(
+          OrderSuccessRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'OrderSuccessRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

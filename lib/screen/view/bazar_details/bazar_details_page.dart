@@ -8,6 +8,7 @@ import 'package:test/core/widget/custom_circle_indicator.dart';
 import 'package:test/core/widget/custom_toast.dart';
 import 'package:test/data/model/bazar_model/bazar_model.dart';
 import 'package:test/provider/cart_provider/cart_provider.dart';
+import 'package:test/provider/total_payment/total_payment_provider.dart';
 import 'package:test/screen/widget/bazar_details_widget/bazar_details_body.dart';
 import 'package:test/screen/widget/home_widget/home_appbar_text.dart';
 
@@ -60,6 +61,9 @@ class BazarDetailsPage extends ConsumerWidget {
                           )
                         : ElevatedButton(
                             onPressed: () {
+                              ref
+                                  .read(totalPaymentProvider.notifier)
+                                  .addToTotal(int.parse(data.price!));
                               provider.addToCart(data);
                             },
                             style: ElevatedButton.styleFrom(

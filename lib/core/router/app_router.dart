@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:test/data/model/bazar_model/bazar_model.dart';
 import 'package:test/data/model/historycal_model/historycal_model.dart';
 import 'package:test/screen/view/Home/initial_page.dart';
+import 'package:test/screen/view/check_out/check_out_page.dart';
 import 'package:test/screen/view/my_cart/my_cart_page.dart';
 import 'package:test/screen/view/authentication/Login/login_page.dart';
 import 'package:test/screen/view/OnBoarding/onboarding_page.dart';
@@ -11,6 +12,7 @@ import 'package:test/screen/view/authentication/forget_Password/forget_password_
 import 'package:test/screen/view/authentication/verify_email/verifiy_email_page.dart';
 import 'package:test/screen/view/bazar_details/bazar_details_page.dart';
 import 'package:test/screen/view/character_details/character_details.dart';
+import 'package:test/screen/view/order_success/order_success_page.dart';
 import 'package:test/screen/view/periods_details/periods_details_page.dart';
 import 'package:test/screen/view/souvenirs_details/souvenirs_details_page.dart';
 import 'package:test/screen/view/splash/splash_page.dart';
@@ -41,5 +43,7 @@ class AppRouter extends _$AppRouter {
         AutoRoute(page: SouvenirsDetailsRoute.page),
         AutoRoute(page: WarDetailsRoute.page),
         AutoRoute(page: BazarDetailsRoute.page),
+        AutoRoute(page: OrderSuccessRoute.page),
+        AutoRoute(page: CheckoutRoute.page),
       ];
 }

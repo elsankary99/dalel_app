@@ -16,7 +16,7 @@ class CustomCartCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(children: [
-      CustomTrashButton(docId: data.id!),
+      CustomTrashButton(docId: data.id!, price: data.price!),
       Expanded(
         child: Card(
           child: Padding(

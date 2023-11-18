@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:test/core/constant/app_strings.dart';
 import 'package:test/provider/cart_provider/cart_provider.dart';
+import 'package:test/provider/total_payment/total_payment_provider.dart';
 import 'package:test/screen/widget/my_cart_widget/cart_shimmer.dart';
 import 'package:test/screen/widget/home_widget/error_text.dart';
 import 'package:test/screen/widget/my_cart_widget/custom_appbar_text.dart';
@@ -29,7 +30,6 @@ class MyCartPage extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.only(left: 6, right: 10),
             child: ref.watch(getDalelCartProvider).when(
-                  skipLoadingOnReload: true,
                   data: (data) => ListView.builder(
                     physics: const BouncingScrollPhysics(),
                     itemCount: data.length,
@@ -57,10 +57,16 @@ class MyCartPage extends ConsumerWidget {
               bottom: 0,
               left: 0,
               right: 0,
-              child: CustomPaymentBottomCard(
-                onPressed: () {},
-                price: "600",
-                title: AppStrings.checkoutNow,
+              child: Consumer(
+                builder: (context, ref, child) {
+                  final provider = ref.watch(totalPaymentProvider.notifier);
+                  ref.watch(totalPaymentProvider);
+                  return CustomPaymentBottomCard(
+                    onPressed: () {},
+                    price: provider.totalPrice.toString(),
+                    title: AppStrings.checkoutNow,
+                  );
+                },
               ))
         ],
       ),
