@@ -2,12 +2,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:test/core/constant/app_strings.dart';
+import 'package:test/core/router/app_router.dart';
 import 'package:test/provider/cart_provider/cart_provider.dart';
 import 'package:test/provider/total_payment/total_payment_provider.dart';
 import 'package:test/screen/widget/my_cart_widget/cart_shimmer.dart';
 import 'package:test/screen/widget/home_widget/error_text.dart';
 import 'package:test/screen/widget/my_cart_widget/custom_appbar_text.dart';
-import 'package:test/screen/widget/my_cart_widget/custom_back_button.dart';
 import 'package:test/screen/widget/my_cart_widget/custom_cart_card.dart';
 import 'package:test/screen/widget/my_cart_widget/custom_payment_bottom_card.dart';
 
@@ -23,7 +23,6 @@ class MyCartPage extends ConsumerWidget {
         centerTitle: true,
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: const CustomBackButton(),
       ),
       body: Stack(
         children: [
@@ -62,7 +61,9 @@ class MyCartPage extends ConsumerWidget {
                   final provider = ref.watch(totalPaymentProvider.notifier);
                   ref.watch(totalPaymentProvider);
                   return CustomPaymentBottomCard(
-                    onPressed: () {},
+                    onPressed: () {
+                      context.router.push(const CheckoutRoute());
+                    },
                     price: provider.totalPrice.toString(),
                     title: AppStrings.checkoutNow,
                   );

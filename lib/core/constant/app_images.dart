@@ -1,6 +1,10 @@
 class Assets {
   Assets._();
   
+  /// Assets for assetsImagesCard
+  /// assets/images/card.png
+  static const String assetsImagesCard = "assets/images/card.png";
+
   /// Assets for assetsImagesForgotPassword
   /// assets/images/forgotPassword.png
   static const String assetsImagesForgotPassword = "assets/images/forgotPassword.png";
@@ -48,6 +52,10 @@ class Assets {
   /// Assets for assetsImagesSucccesOrder
   /// assets/images/succcesOrder.png
   static const String assetsImagesSucccesOrder = "assets/images/succcesOrder.png";
+
+  /// Assets for assetsImagesSucccesOrderIcon
+  /// assets/images/succces_order_icon.png
+  static const String assetsImagesSucccesOrderIcon = "assets/images/succces_order_icon.png";
 
   /// Assets for assetsImagesVector1
   /// assets/images/vector1.svg

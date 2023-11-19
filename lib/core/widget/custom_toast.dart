@@ -6,7 +6,7 @@ customToast({required String title, Color? color}) {
   Fluttertoast.showToast(
       msg: title,
       toastLength: Toast.LENGTH_SHORT,
-      gravity: ToastGravity.CENTER,
+      gravity: ToastGravity.BOTTOM,
       timeInSecForIosWeb: 1,
       backgroundColor: color ?? AppColors.primaryColor,
       textColor: Colors.white,

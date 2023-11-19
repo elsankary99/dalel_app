@@ -1,6 +1,4 @@
 abstract class AppStrings {
-  //ToDo:All Strings
-
   static const String appName = "Dalel",
       //!On Boarding Strings
       skip = "Skip",
@@ -90,6 +88,9 @@ abstract class AppStrings {
       resendCode = "Resend Code",
       about = "About ",
       wars = " Wars",
+      home = " Home",
+      myCreditCard = "My Credit Card",
+      myElectricCash = "My Electric Cash",
       verifyAccount = "Verify Account",
       enter4DigitCodeWeHaveSentTo = "Enter 4 digit code we have sent\n to ",
       haventReceivedVerificationCode = "Haven’t received verification code?",

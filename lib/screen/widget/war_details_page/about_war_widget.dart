@@ -38,7 +38,6 @@ class AboutWarWidget extends StatelessWidget {
           data.description!,
           style:
               CustomTextStyles.poppins500style14.copyWith(color: Colors.black),
-          maxLines: 5,
         ),
       ),
     ]);
