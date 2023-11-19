@@ -5,9 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/constant/app_text_style.dart';
+import 'package:test/core/extension/media_query.dart';
 import 'package:test/provider/total_payment/total_payment_provider.dart';
 import 'package:test/screen/widget/checkout_widget/delevry_address_widget.dart';
 import 'package:test/screen/widget/checkout_widget/payment_method_widget.dart';
+import 'package:test/screen/widget/checkout_widget/selected_product_widget.dart';
 import 'package:test/screen/widget/home_widget/head_text.dart';
 import 'package:test/screen/widget/my_cart_widget/custom_payment_bottom_card.dart';
 
@@ -32,13 +34,24 @@ class CheckoutPage extends ConsumerWidget {
         children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 16.w),
-            child: const CustomScrollView(
+            child: CustomScrollView(
+              physics: const BouncingScrollPhysics(),
               slivers: [
-                SliverToBoxAdapter(child: HeadText(AppStrings.deliveryAddress)),
-                SliverToBoxAdapter(child: DeliveryAddressWidget()),
-                SliverToBoxAdapter(child: HeadText(AppStrings.selectedProduct)),
-                SliverToBoxAdapter(child: HeadText(AppStrings.paymentMethod)),
-                SliverToBoxAdapter(child: PaymentMethodWidget()),
+                SliverToBoxAdapter(child: SizedBox(height: 10.h)),
+                const SliverToBoxAdapter(
+                    child: HeadText(AppStrings.deliveryAddress)),
+                SliverToBoxAdapter(child: SizedBox(height: 10.h)),
+                const SliverToBoxAdapter(child: DeliveryAddressWidget()),
+                SliverToBoxAdapter(child: SizedBox(height: 10.h)),
+                const SliverToBoxAdapter(
+                    child: HeadText(AppStrings.selectedProduct)),
+                const SliverToBoxAdapter(child: SelectedProduct()),
+                const SliverToBoxAdapter(
+                    child: HeadText(AppStrings.paymentMethod)),
+                SliverToBoxAdapter(child: SizedBox(height: 4.h)),
+                const SliverToBoxAdapter(child: PaymentMethodWidget()),
+                SliverToBoxAdapter(
+                    child: SizedBox(height: context.height * 0.19)),
               ],
             ),
           ),

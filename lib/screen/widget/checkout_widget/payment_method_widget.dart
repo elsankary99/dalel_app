@@ -37,7 +37,7 @@ class _PaymentMethodWidgetState extends State<PaymentMethodWidget> {
                 });
               },
               child: Container(
-                margin: EdgeInsets.symmetric(vertical: 6.h),
+                margin: EdgeInsets.symmetric(vertical: 6.h, horizontal: 2.w),
                 padding: EdgeInsets.symmetric(horizontal: 12.w),
                 height: context.height * 0.09,
                 decoration: BoxDecoration(
