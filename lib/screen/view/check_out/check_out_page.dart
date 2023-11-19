@@ -6,6 +6,7 @@ import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_strings.dart';
 import 'package:test/core/constant/app_text_style.dart';
 import 'package:test/core/extension/media_query.dart';
+import 'package:test/core/router/app_router.dart';
 import 'package:test/provider/total_payment/total_payment_provider.dart';
 import 'package:test/screen/widget/checkout_widget/delevry_address_widget.dart';
 import 'package:test/screen/widget/checkout_widget/payment_method_widget.dart';
@@ -65,7 +66,7 @@ class CheckoutPage extends ConsumerWidget {
                   ref.watch(totalPaymentProvider);
                   return CustomPaymentBottomCard(
                     onPressed: () {
-                      // context.router.push(const CheckoutRoute());
+                      context.router.push(const OrderSuccessRoute());
                     },
                     price: provider.totalPrice.toString(),
                     title: AppStrings.confirmPayment,

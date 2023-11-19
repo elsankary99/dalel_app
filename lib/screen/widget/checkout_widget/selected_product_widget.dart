@@ -36,7 +36,8 @@ class SelectedProduct extends ConsumerWidget {
                   child: Row(
                     children: [
                       SizedBox(
-                          height: context.height * 0.1,
+                          // height: context.height * 0.1,
+                          width: context.width * 0.15,
                           child: CachedNetworkImage(
                               imageUrl: data[index].imageUrl!)),
                       SizedBox(width: 10.w),

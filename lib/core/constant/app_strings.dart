@@ -104,6 +104,8 @@ abstract class AppStrings {
       passwordError = "password must be at least 6 characters",
       welcomeToOurApp = 'Welcome to our app 🤍',
       kContinue = "continue",
+      thanksForOrder =
+          "Thank you for your order here and your\npackage will be sent to your address very\nquickly and fast good product",
       sureLogOut = 'Are you sure you want to log out?',
       welcomeLBack = 'Welcome Back 🤍';
 }

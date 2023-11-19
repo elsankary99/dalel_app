@@ -1,7 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:readmore/readmore.dart';
 import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_text_style.dart';
 import 'package:test/core/extension/media_query.dart';
@@ -58,17 +57,9 @@ class BazarDetailsBody extends StatelessWidget {
           SliverToBoxAdapter(child: SizedBox(height: context.height * 0.02)),
           SliverToBoxAdapter(
             child: Center(
-              child: ReadMoreText(
+              child: Text(
                 data.description!,
-                trimLines: 3,
                 style: CustomTextStyles.poppins300style16,
-                trimMode: TrimMode.Line,
-                trimCollapsedText: 'Show more',
-                trimExpandedText: 'Show less',
-                lessStyle: CustomTextStyles.poppins300style16
-                    .copyWith(color: AppColors.primaryColor),
-                moreStyle: CustomTextStyles.poppins300style16
-                    .copyWith(color: AppColors.primaryColor),
               ),
             ),
           ),
