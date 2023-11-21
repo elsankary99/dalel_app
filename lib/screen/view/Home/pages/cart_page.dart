@@ -58,6 +58,7 @@ class CartPage extends ConsumerWidget {
             child: Icon(
               Icons.shopping_cart_outlined,
               size: 28.sp,
+              color: AppColors.offWhite,
             ),
           ),
         ),

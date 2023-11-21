@@ -55,8 +55,11 @@ class UserPage extends ConsumerWidget {
                 style: CustomTextStyles.poppins500style16
                     .copyWith(color: AppColors.blackGrey))),
         SliverToBoxAdapter(child: SizedBox(height: context.height * 0.02)),
-        const SliverToBoxAdapter(
+        SliverToBoxAdapter(
             child: UserSettingWidget(
+                onTap: () {
+                  context.router.push(const EditProfileRoute());
+                },
                 text: AppStrings.editProfile,
                 icon: FontAwesomeIcons.solidUser)),
         const SliverToBoxAdapter(

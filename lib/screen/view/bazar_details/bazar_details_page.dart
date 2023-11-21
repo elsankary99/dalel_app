@@ -69,7 +69,7 @@ class BazarDetailsPage extends ConsumerWidget {
                             style: ElevatedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(50)),
-                                backgroundColor: AppColors.deepBrown),
+                                backgroundColor: AppColors.primaryColor),
                             child: Text(
                               "Add To Cart",
                               style: CustomTextStyles.poppins400style14,

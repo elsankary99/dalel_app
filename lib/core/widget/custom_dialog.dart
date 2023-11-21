@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:test/core/constant/app_colors.dart';
 import 'package:test/core/constant/app_text_style.dart';
 import 'package:test/core/extension/media_query.dart';
@@ -81,13 +82,14 @@ Future<void> getImage(BuildContext context,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(left: 10, right: 10, bottom: 8),
+            padding: const EdgeInsets.only(left: 10, right: 10),
             child: SizedBox(
               height: context.height * 0.2,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  SizedBox(height: 10.h),
                   ElevatedButton(
                       onPressed: galleryBtn,
                       style: ElevatedButton.styleFrom(
