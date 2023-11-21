@@ -8,12 +8,14 @@ import 'package:test/screen/widget/authentication_widget/function.dart';
 class CustomTextFormField extends StatelessWidget {
   final String labelText;
   final void Function(String)? onChanged;
-  final void Function(String)? onFieldSubmitted;
+  final void Function(String?)? onSaved;
+  final TextEditingController? controller;
   const CustomTextFormField({
     super.key,
     required this.labelText,
     this.onChanged,
-    this.onFieldSubmitted,
+    this.onSaved,
+    this.controller,
   });
 
   @override
@@ -21,6 +23,7 @@ class CustomTextFormField extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top: 20.h),
       child: TextFormField(
+        controller: controller,
         validator: (value) {
           if (value!.trim().isEmpty) {
             return AppStrings.requiredField;
@@ -28,7 +31,7 @@ class CustomTextFormField extends StatelessWidget {
           return null;
         },
         onChanged: onChanged,
-        onFieldSubmitted: onFieldSubmitted,
+        onSaved: onSaved,
         cursorColor: AppColors.primaryColor,
         decoration: InputDecoration(
             contentPadding:

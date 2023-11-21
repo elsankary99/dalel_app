@@ -136,9 +136,11 @@ class AuthProvider extends StateNotifier<AuthState> {
   }
 
   Future<void> addUserProfile() async {
-    CollectionReference users = FirebaseFirestore.instance.collection('users');
-    await users.add({
-      'user_id': FirebaseAuth.instance.currentUser!.uid,
+    final users = FirebaseFirestore.instance
+        .collection('users')
+        .doc(FirebaseAuth.instance.currentUser!.uid);
+    await users.set({
+      'image_url': null,
       'first_name': firstName, // John Doe
       'last_name': lastName, // Stokes and Sons
     });
