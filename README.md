@@ -1,16 +1,2 @@
-# test
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Picsart_23-11-22_03-38-20-655](https://github.com/elsankary99/dalel_app/assets/65948188/058c7786-fa55-41d3-84d5-05c9830701a1)
+![Picsart_23-11-22_03-41-38-712](https://github.com/elsankary99/dalel_app/assets/65948188/076f1d36-2bbb-48fb-a0c8-dc6f56124405)
