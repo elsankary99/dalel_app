@@ -5,12 +5,23 @@
 
 ## Description
 
--
+The "Dalel" app is a comprehensive source that takes users on a journey through the history of Egyptian and Pharaonic civilization. It provides detailed information about historical events and wars that shaped this great civilization, offering a deep understanding of Egyptian heritage and culture.
+
+In addition, "Dalel" allows history enthusiasts and art collectors to enjoy a unique experience through a dedicated section for selling artifacts. Users can explore and acquire authentic pieces that reflect the beauty and luxury of the arts and craftsmanship during the Egyptian and Pharaonic eras.
 
 ## Features
 
 - **Firebase:**
-  - **Phone Authentication:** Utilizes Firebase services for phone authentication.
+  - **Firebase Authentication:** Simplify secure user identity management for your app with Firebase's seamless authentication service.
   - **Firestore:** Efficiently stores data using Firebase Firestore.
   - **Cloud Storage:** Enables users to upload and download files using Firebase Cloud Storage.
+ 
+- **Design and Development Technologies:**
+  - **MVVM:** Follows the MVVM (Model-View-ViewModel) design pattern for organized code.
+  - **Riverpod:** Efficiently manages state using the Riverpod package.
+  - **Auto Route:** Simplifies navigation with automatic route generation.
+  - **Responsive UI:** Ensures a responsive user interface for various screen sizes.
+  - **Image Picker:** Allows users to choose images from their gallery.
+   **Shared Preferences:** Stores local settings between app sessions.
+ 
 
